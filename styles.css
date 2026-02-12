@@ -56,7 +56,7 @@ ul {
 
 .header {
     height: var(--altura-header);
-    background: var(--color-primario);
+    background: var(--color-fondo);
     /* AGREGA ESTAS DOS LÍNEAS */
     position: relative;
     z-index: 1000;
@@ -68,7 +68,6 @@ ul {
     justify-content: space-between;
     align-items: center;
     padding: 0 var(--padding-left-right);
- border-bottom: 2px solid #red;
 }
 
 .label-hamburguesa {
@@ -95,7 +94,7 @@ ul {
     background: var(--color-primario-suave);
     /* Fondo semi-transparente */
     backdrop-filter: blur(7px);
-    
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     position: absolute;
     top: var(--altura-header);
     left: 0;
@@ -115,23 +114,24 @@ ul {
 
 .links {
     font-family: "Michroma", sans-serif;
-    font-size: 1rem;
-    
+    font-size: 1.5rem;
+    font-weight: bold;
 }
 
 body {
-	margin: 0;
-    padding: 0;
-    background-color: var(--color-primario);
-	color: var(--color-texto);
+    color: var(--color-texto);
+}
+body {
+    background-color: var(--color-secundario);
+
     font-family: "Syncopate", sans-serif;
 }
 
 /* Encabezado */
-/* header {
+header {
     padding: 1.5rem 2rem;
-    border-bottom: 2px solid #red;
-}*/
+    border-bottom: 2px solid var(--color-titulo);
+}
 
 header h1 {
     color: var(--color-titulo);
@@ -141,21 +141,11 @@ header h1 {
 nav a:hover {
     color: var(--color-titulo);
 }
-.container {
-    width: 100%;
-    max-width: var(--ancho-maximo); /* Los 1200px que definiste */
-    margin: 0 auto;                 /* Centra el bloque en la pantalla */
-    padding: 0 20px;                /* Pequeño respiro para que en móviles no toque el borde */
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
 
 /* Contenido principal */
 main {
     background: var(--color-primario);
-    
+    padding: 2rem;
 }
 
 /* Estilo para el contenedor del texto */
@@ -268,14 +258,7 @@ button:hover {
 }
 
 /* sección 2 */
-.section-contenido, 
-.nueva-seccion {
-    width: 100%;
-    display: flex;
-    justify-content: center; /* Asegura que el contenedor interno esté centrado */
-    padding: 50px 0;         /* Espacio arriba y abajo para que no se vea apretado */
-    background-color: var(--color-primario); /* Fondo total */
-}
+
 .nueva-seccion {
     background: linear-gradient(
         180deg,
