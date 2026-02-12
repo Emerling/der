@@ -1,67 +1,66 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>David Rondón | Fullstack</title>
-    <link rel="stylesheet" href="styles.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Michroma&family=Syncopate:wght@400;700&display=swap" rel="stylesheet" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>David Rondón | Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Michroma&family=Syncopate:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
+
     <header class="header">
         <nav class="navbar">
-            <div class="logo">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 100" width="150">
-                    <text x="10" y="60" font-family="Michroma, sans-serif" font-size="50" font-weight="bolder" fill="#4b88fa">{der;}</text>
-                    <polyline points="28,68 37,63 46,68 55,63 64,68 73,63 82,68 91,63 100,68 109,63 118,68 127,63 136,68 145" fill="none" stroke="#E31A1C" stroke-width="4" stroke-linecap="round" />
-                </svg>
-            </div>
-
-            <input type="checkbox" id="menu-hamburguesa" class="menu-input" />
+            <div class="logo">{der;}</div>
             
-            <label class="label-hamburguesa" for="menu-hamburguesa">
-                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="white" viewBox="0 0 16 16">
-                    <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
-                </svg>
+            <input type="checkbox" id="menu-toggle" class="menu-toggle">
+            
+            <label for="menu-toggle" class="hamburguesa">
+                <span></span>
+                <span></span>
+                <span></span>
             </label>
 
-            <ul class="ul_links">
-                <li><a class="links" href="#">Inicio</a></li>
-                <li><a class="links" href="#">Quién soy</a></li>
-                <li><a class="links" href="#">Qué hago</a></li>
-                <li><a class="links" href="#">Contacto</a></li>
+            <ul class="nav-links">
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Quién soy</a></li>
+                <li><a href="#">Qué hago</a></li>
+                <li><a href="#">Contacto</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <section class="section-contenido">
-            <div class="texto">
-                <h3>Yo <strong>soy</strong></h3>
-                <h4>Desarrollador Fullstack</h4>
-                <h2 class="nombre">David @Emerling Rondón</h2>
-                <p><span class="descripcion">Transformando ideas en código</span></p>
-                <button>Acción destacada</button>
-            </div>
-            <div class="section-imagen">
-                <img class="imagen-hero" src="img/David-1.png" alt="perfil de David Rondón" />
+        <section class="hero">
+            <div class="container hero-flex">
+                <div class="hero-text">
+                    <h3>Yo <strong>soy</strong></h3>
+                    <h4>Desarrollador Fullstack</h4>
+                    <h1 class="nombre">David @Emerling Rondón</h1>
+                    <p class="descripcion">Transformando ideas en código</p>
+                    <button class="btn-accion">Acción destacada</button>
+                </div>
+                <div class="hero-image">
+                    <img src="img/David-1.png" alt="David Rondón">
+                </div>
             </div>
         </section>
 
-        <section class="nueva-seccion">
-            <div class="imagen-izquierda">
-                <img class="imagen-perfil" src="img/David-2.png" alt="David con lentes de sol" />
-            </div>
-            <div class="texto-derecha">
-                <h3>Acerca de mi</h3>
-                <p>Soy un profesional en tecnología con experiencia como programador, técnico de soporte y diseñador. <span class="descripcion">¡Estoy listo para enfrentar nuevos desafíos contigo!</span></p>
-                
-                <div class="redes-sociales">
-                    <a href="#" class="icono"><img src="img/twitter-x-logo.png" alt="Twitter" /></a>
-                    <a href="#" class="icono"><img src="img/Github-logo.png" alt="GitHub" /></a>
-                    <a href="#" class="icono"><img src="img/telegram-logo.png" alt="Telegram" /></a>
+        <section class="about">
+            <div class="container about-flex">
+                <div class="about-image">
+                    <img src="img/David-2.png" alt="David con lentes">
+                </div>
+                <div class="about-text">
+                    <h3>Acerca de mi</h3>
+                    <p>Soy un profesional en tecnología con experiencia como programador, técnico de soporte y diseñador. Mi pasión por aprender y adaptarme me permite ofrecer soluciones innovadoras y efectivas.</p>
+                    <p class="resaltado">¡Estoy listo para enfrentar nuevos desafíos contigo!</p>
+                    
+                    <div class="redes">
+                        <a href="#" class="social-icon"><img src="img/twitter-x-logo.png" alt="X"></a>
+                        <a href="#" class="social-icon"><img src="img/Github-logo.png" alt="Git"></a>
+                        <a href="#" class="social-icon"><img src="img/telegram-logo.png" alt="TG"></a>
+                    </div>
                 </div>
             </div>
         </section>
@@ -70,5 +69,6 @@
     <footer>
         <p>© 2026 Desarrollado por David Rondón</p>
     </footer>
+
 </body>
 </html>
