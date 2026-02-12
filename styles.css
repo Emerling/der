@@ -214,6 +214,6 @@ body {
     }
 
     .img-david {
-        max-width: 300px; /* Más pequeña en móvil */
+        max-width: 240px; /* Más pequeña en móvil */
     }
 }
