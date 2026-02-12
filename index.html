@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>{der;}</title>
+        <link rel="stylesheet" href="styles.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Michroma&family=Syncopate:wght@400;700&display=swap"
+            rel="stylesheet"
+        />
+    </head>
+    <body>
+        <header class="header">
+            <nav class="navbar">
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 300 100"
+                    width="300"
+                    height="100"
+                >
+                    <!-- Texto der entre llaves en Azul -->
+                    <text
+                        x="10"
+                        y="60"
+                        font-family="michroma, sans-serif"
+                        font-size="50"
+                        font-weight="bolder"
+                        fill="#4b88fa"
+                    >
+                        {der;}
+                    </text>
+
+                    <!-- Subrayado en zigzag rojo solo bajo la palabra "der" -->
+                    <polyline
+                        points="28,68 37,63 46,68 55,63 64,68 73,63 82,68 91,63 100,68 109,63 118,68 127,63 136,68 145 "
+                        fill="none"
+                        stroke="#E31A1C"
+                        stroke-width="4"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                    />
+                </svg>
+
+                <label class="label-hamburguesa" for="menu-hamburguesa">
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="32"
+                        height="32"
+                        fill="currentColor"
+                        class="list_icon"
+                        viewBox="0 0 16 16"
+                    >
+                        <path
+                            fill-rule="evenodd"
+                            d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"
+                        />
+                    </svg>
+                </label>
+                <input
+                    class="menu-hamburguesa"
+                    type="checkbox"
+                    name=""
+                    id="menu-hamburguesa"
+                />
+                <ul class="ul_links">
+                    <li class="li-links">
+                        <a class="links" href="#">Inicio</a>
+                    </li>
+                    <li class="li-links">
+                        <a class="links" href="#">Quién soy</a>
+                    </li>
+                    <li class="li-links">
+                        <a class="links" href="#">Qué hago</a>
+                    </li>
+                    <li class="li-links">
+                        <a class="links" href="#">Contacto</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+    <!-- SECCIÓN 1 -->
+    <section class="section-contenido">
+        <div class="container"> <!-- ESTE ES EL CAMBIO CLAVE -->
+            <div class="texto">
+                <h3>Yo <strong>soy</strong></h3>
+                <h4>Desarrollador Fullstack</h4>
+                    <h2 class="nombre">David @Emerling Rondón</h2>
+                    <p>
+                        <span class="descripcion"
+                            >Transformando ideas en código</span
+                        >
+                    </p>
+                    <button>Acción destacada</button>
+            </div>
+            <div class="section-imagen">
+                <img class="imagen" src="img/David-1.png" alt="perfil">
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN 2 -->
+    <section class="nueva-seccion">
+        <div class="container"> <!-- ESTE ES EL CAMBIO CLAVE -->
+            <div class="imagen-izquierda">
+                <img class="imagen" src="img/David-2.png" alt="David">
+            </div>
+            <div class="texto-derecha">
+                <h3>Acerca de mi</h3>
+               <p>
+                        Soy un profesional en tecnología con experiencia como programador, técnico de soporte y diseñador. Mi pasión por aprender y adaptarme me permite ofrecer soluciones innovadoras y efectivas. Me enfoco en la satisfacción del cliente y en brindar una experiencia excepcional en cada proyecto.<span class="descripcion">
+                          ¡Estoy listo para enfrentar nuevos desafíos contigo!
+                        </span>
+                    </p>
+
+                    <div class="redes-sociales">
+                        <a
+                            href="https://twitter.com/Emerling"
+                            class="icono"
+                            target="_blank"
+                        >
+                            <img src="img/twitter-x-logo.png" alt="Twitter" />
+                        </a>
+                        <a
+                            href="https://github.com/emerling"
+                            class="icono"
+                            target="_blank"
+                        >
+                            <img src="img/Github-logo.png" alt="GitHub" />
+                        </a>
+                        <a
+                            href="https://t.me/emerling"
+                            class="icono"
+                            target="_blank"
+                        >
+                            <img src="img/telegram-logo.png" alt="Telegram" />
+                        </a>
+            </div>
+        </div>
+    </section>
+</main>
+        <footer>
+            <p>© 2026 Desarrollado por David Rondón</p>
+        </footer>
+    </body>
+</html>

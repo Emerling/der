@@ -1,0 +1,432 @@
+:root {
+    --color-primario: #000;
+    /* Color primario */
+    --color-primario-suave: rgba(30, 30, 30, 0.45);
+    --color-secundario: #bfbfbf;
+    /* Color semi-transparente */
+    --color-blanco: #fff;
+    --color-titulo: #4b88fa;
+    /* Color del título */
+    --color-hover: #0d1a63;
+    /* Color de hover para botones */
+    --color-texto: #ddd;
+    /* Color del texto */
+    --color-fondo: #131313;
+    --altura-header: 80px;
+    --padding-left-right: 1rem;
+    --ancho-maximo: 1200px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.michroma-regular {
+    font-family: "Michroma", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+.syncopate-regular {
+    font-family: "Syncopate", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.syncopate-bold {
+    font-family: "Syncopate", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-blanco);
+    /* Color de los enlaces */
+}
+.descripcion {
+    font-family: "Syncopate", sans-serif;
+    color: var(--color-blanco);
+    line-height: 1.2; /* Ajusta este valor según sea necesario */ 
+}
+ol,
+ul {
+    list-style: none;
+}
+
+.header {
+    height: var(--altura-header);
+    background: var(--color-primario);
+    /* AGREGA ESTAS DOS LÍNEAS */
+    position: relative;
+    z-index: 1000;
+}
+
+.navbar {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 var(--padding-left-right);
+ border-bottom: 2px solid #red;
+}
+
+.label-hamburguesa {
+    display: block;
+    /* Visibilidad de la etiqueta hamburguesa */
+}
+
+.menu-hamburguesa {
+    display: none;
+    /* Ocultar menu por defecto */
+}
+
+.menu-hamburguesa:checked + .ul_links {
+    height: calc(100vh - var(--altura-header));
+}
+
+.list-icon {
+    color: var(--color-blanco);
+    cursor: pointer;
+}
+
+.ul_links {
+    width: 100%;
+    background: var(--color-primario-suave);
+    /* Fondo semi-transparente */
+    backdrop-filter: blur(7px);
+    
+    position: absolute;
+    top: var(--altura-header);
+    left: 0;
+    height: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.2rem;
+    transition: all 0.3s;
+    z-index: 100;
+}
+
+.li_links {
+}
+
+.links {
+    font-family: "Michroma", sans-serif;
+    font-size: 1rem;
+    
+}
+
+body {
+	margin: 0;
+    padding: 0;
+    background-color: var(--color-primario);
+	color: var(--color-texto);
+    font-family: "Syncopate", sans-serif;
+}
+
+/* Encabezado */
+/* header {
+    padding: 1.5rem 2rem;
+    border-bottom: 2px solid #red;
+}*/
+
+header h1 {
+    color: var(--color-titulo);
+    margin: 0;
+}
+
+nav a:hover {
+    color: var(--color-titulo);
+}
+.container {
+    width: 100%;
+    max-width: var(--ancho-maximo); /* Los 1200px que definiste */
+    margin: 0 auto;                 /* Centra el bloque en la pantalla */
+    padding: 0 20px;                /* Pequeño respiro para que en móviles no toque el borde */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+/* Contenido principal */
+main {
+    background: var(--color-primario);
+    
+}
+
+/* Estilo para el contenedor del texto */
+.texto {
+    text-align: center;
+    /* Centra todo el texto en pantallas pequeñas */
+}
+
+h3 {
+    font-family: "Syncopate", sans-serif;
+    font-weight: 500;
+    font-size: 1.5rem;
+    line-height: 1.5; /* Ajusta este valor según sea necesario */ 
+    color: var(--color-secundario);
+    margin-bottom: 0.5rem;
+}
+
+h4 {
+    font-family: "Syncopate", sans-serif;
+    font-weight: lighter;
+    line-height: 1.5; /* Ajusta este valor según sea necesario */ 
+    font-size: 1.1rem;
+    color: var(--color-secundario);
+}
+
+p {
+    color: var(--color-secundario);
+}
+
+.nombre {
+    font-family: "Michroma", sans-serif;
+    font-weight: bolder;
+    font-size: 2.2rem;
+    background: linear-gradient(
+        90deg,
+        rgba(75, 136, 250, 1) 0%,
+        rgba(34, 34, 240, 1) 35%,
+        rgba(0, 212, 255, 1) 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+button {
+    margin-top: 0.5rem;
+    background-color: var(--color-titulo);
+    border: none;
+    padding: 0.75rem 1.5rem;
+    color: var(--color-blanco);
+    font-weight: 700;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: var(--color-hover);
+}
+.texto h3,
+.texto h4,
+.texto .nombre,
+.texto button {
+    opacity: 0;
+    /* Comienza invisible */
+    animation: bounceIn 1s forwards;
+    /* Duración de 1 segundo */
+}
+
+/* Definir la animación */
+@keyframes bounceIn {
+    0% {
+        opacity: 0;
+        /* Inicia oculto */
+        transform: scale(0.5);
+        /* Comienza más pequeño */
+    }
+    60% {
+        opacity: 1;
+        /* Aparece */
+        transform: scale(1.1);
+        /* Rebote al 110% */
+    }
+    80% {
+        transform: scale(0.9);
+        /* Rebote hacia abajo */
+    }
+    100% {
+        opacity: 1;
+        /* Termina visible */
+        transform: scale(1);
+        /* Tamaño normal */
+    }
+}
+
+/* Aplicar retraso para cada elemento */
+.texto h3 {
+    animation-delay: 0.2s;
+}
+
+.texto h4 {
+    animation-delay: 0.4s;
+}
+
+.texto .nombre {
+    animation-delay: 0.6s;
+}
+
+.texto button {
+    animation-delay: 0.8s;
+}
+
+/* sección 2 */
+.section-contenido, 
+.nueva-seccion {
+    width: 100%;
+    display: flex;
+    justify-content: center; /* Asegura que el contenedor interno esté centrado */
+    padding: 50px 0;         /* Espacio arriba y abajo para que no se vea apretado */
+    background-color: var(--color-primario); /* Fondo total */
+}
+.nueva-seccion {
+    background: linear-gradient(
+        180deg,
+        rgb(0, 0, 0) 0%,
+        rgb(22, 22, 22) 70%,
+        rgb(48, 48, 48) 100%
+    );
+    display: flex;
+    align-items: center;
+    /* Alinea verticalmente el contenido */
+    margin-top: 20px;
+    /* Espacio superior */
+}
+
+.imagen-izquierda {
+    flex: 1;
+    /* Permite que esta sección use el espacio disponible */
+    text-align: center;
+    /* Centra la imagen */
+}
+
+.imagen-izquierda img {
+    max-width: 100%;
+    /* La imagen ocupará el ancho máximo disponible */
+    height: auto;
+    /* Mantiene la proporción de la imagen */
+}
+
+.texto-derecha {
+    flex: 2;
+    /* Esta sección ocupará el doble del espacio que la imagen */
+    padding: 20px;
+    /* Espacio interior */
+    line-height: 1.5; /* Ajusta este valor según sea necesario */ 
+}
+
+.texto-derecha h3 {
+    margin-bottom: 10px;
+    /* Espacio entre el título y el texto */
+}
+
+/* Estilo general para la sección de redes sociales */
+.redes-sociales {
+    display: flex;
+
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.icono {
+    display: inline-block;
+    border: 2px solid #4b88fa;
+    /* Borde azul */
+    border-radius: 50%;
+    /* Bordes redondeados */
+    overflow: hidden;
+    /* Oculta parte de la imagen que sobresale */
+    width: 50px;
+    /* Ancho especificado */
+    height: 50px;
+    /* Alto especificado */
+}
+
+.icono img {
+    width: 100%;
+    /* Ocupa el ancho completo del contenedor */
+    height: auto;
+    /* Mantiene la proporción de la imagen */
+}
+
+/* Pie de página */
+footer {
+    background: var(--color-fondo);
+    text-align: center;
+    padding: 1rem;
+    border-top: 1px solid #555;
+    font-family: sans-serif;
+    font-size: 0.9rem;
+    color: #ddd;
+}
+
+/* Estilo general para la sección con texto e imagen */
+.section-contenido {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 2rem 1rem;
+}
+
+/* Estilo para la imagen */
+.section-imagen {
+    padding: 0;
+}
+
+.imagen {
+    max-width: 100%;
+    height: auto;
+    max-height: 600px;
+    margin-left: 2rem;
+    display: block;
+}
+
+/* Estilo para pantallas pequeñas */
+@media (max-width: 768px) {
+    .section-contenido {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .texto {
+        text-align: center;
+        /* Asegura que el texto esté centrado en móviles */
+    }
+
+    .imagen {
+        max-width: 65%;
+        margin-left: auto;
+        margin-top: 1rem;
+    }
+
+    .nueva-seccion {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (min-width: 768px) {
+    .label-hamburguesa {
+        display: none;
+        /* Ocultar etiqueta en pantallas grandes */
+    }
+
+    .ul_links {
+        background: none;
+        /* Fondo en pantallas grandes */
+        position: static;
+        width: auto;
+        height: auto;
+        flex-direction: row;
+        gap: 1rem;
+    }
+
+    .links {
+        font-size: 1rem;
+        transition: all 0.3s;
+        padding: 0.2rem 0.6rem;
+    }
+
+    .links:hover {
+        color: var(--color-titulo);
+    }
+}
