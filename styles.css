@@ -114,8 +114,7 @@ ul {
 
 .links {
     font-family: "Michroma", sans-serif;
-    font-size: 1.5rem;
-    font-weight: bold;
+    font-size: 1.2rem;
 }
 
 body {
@@ -130,7 +129,6 @@ body {
 /* Encabezado */
 header {
     padding: 1.5rem 2rem;
-    border-bottom: 2px solid var(--color-titulo);
 }
 
 header h1 {
@@ -204,58 +202,6 @@ button {
 button:hover {
     background-color: var(--color-hover);
 }
-.texto h3,
-.texto h4,
-.texto .nombre,
-.texto button {
-    opacity: 0;
-    /* Comienza invisible */
-    animation: bounceIn 1s forwards;
-    /* Duración de 1 segundo */
-}
-
-/* Definir la animación */
-@keyframes bounceIn {
-    0% {
-        opacity: 0;
-        /* Inicia oculto */
-        transform: scale(0.5);
-        /* Comienza más pequeño */
-    }
-    60% {
-        opacity: 1;
-        /* Aparece */
-        transform: scale(1.1);
-        /* Rebote al 110% */
-    }
-    80% {
-        transform: scale(0.9);
-        /* Rebote hacia abajo */
-    }
-    100% {
-        opacity: 1;
-        /* Termina visible */
-        transform: scale(1);
-        /* Tamaño normal */
-    }
-}
-
-/* Aplicar retraso para cada elemento */
-.texto h3 {
-    animation-delay: 0.2s;
-}
-
-.texto h4 {
-    animation-delay: 0.4s;
-}
-
-.texto .nombre {
-    animation-delay: 0.6s;
-}
-
-.texto button {
-    animation-delay: 0.8s;
-}
 
 /* sección 2 */
 
@@ -275,13 +221,11 @@ button:hover {
 
 .imagen-izquierda {
     flex: 1;
-    /* Permite que esta sección use el espacio disponible */
     text-align: center;
-    /* Centra la imagen */
 }
 
 .imagen-izquierda img {
-    max-width: 100%;
+    max-width: 50%;
     /* La imagen ocupará el ancho máximo disponible */
     height: auto;
     /* Mantiene la proporción de la imagen */
@@ -289,7 +233,6 @@ button:hover {
 
 .texto-derecha {
     flex: 2;
-    /* Esta sección ocupará el doble del espacio que la imagen */
     padding: 20px;
     /* Espacio interior */
     line-height: 1.5; /* Ajusta este valor según sea necesario */ 
@@ -356,7 +299,7 @@ footer {
 }
 
 .imagen {
-    max-width: 100%;
+    max-width: 50%;
     height: auto;
     max-height: 600px;
     margin-left: 2rem;
@@ -376,7 +319,7 @@ footer {
     }
 
     .imagen {
-        max-width: 65%;
+        max-width: 45%;
         margin-left: auto;
         margin-top: 1rem;
     }
