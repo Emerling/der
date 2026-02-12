@@ -1,13 +1,7 @@
 :root {
-    --color-primario: #000;
-    --color-primario-suave: rgba(19, 19, 19, 0.95);
-    --color-secundario: #bfbfbf;
-    --color-blanco: #fff;
-    --color-titulo: #4b88fa;
-    --color-hover: #0d1a63;
-    --color-texto: #ddd;
-    --color-fondo: #131313;
-    --altura-header: 80px;
+    --azul: #4b88fa;
+    --negro: #000000;
+    --blanco: #ffffff;
 }
 
 * {
@@ -17,161 +11,100 @@
 }
 
 body {
-    background-color: var(--color-fondo);
-    color: var(--color-texto);
-    font-family: "Syncopate", sans-serif;
-    overflow-x: hidden; /* Evita que la web baile de lado a lado */
+    background-color: #111; /* Fondo oscuro para contraste */
+    font-family: 'Syncopate', sans-serif;
 }
 
-/* HEADER & NAVBAR */
 .header {
-    height: var(--altura-header);
-    background: var(--color-fondo);
-    position: sticky;
+    width: 100%;
+    height: 80px;
+    background: var(--negro);
+    display: flex;
+    align-items: center;
+    position: fixed; /* Lo fijamos arriba */
     top: 0;
     z-index: 1000;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
 }
 
 .navbar {
-    height: 100%;
+    width: 100%;
     max-width: 1200px;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 1.5rem;
+    padding: 0 20px;
 }
 
-.menu-input {
+.logo {
+    font-family: 'Michroma', sans-serif;
+    color: var(--azul);
+    font-size: 1.5rem;
+}
+
+/* Ocultar el checkbox */
+#btn-menu {
     display: none;
 }
 
-.label-hamburguesa {
+/* Icono Hamburguesa */
+.icon-menu {
+    display: none; /* Se oculta en PC */
+    flex-direction: column;
+    gap: 5px;
     cursor: pointer;
-    z-index: 1001;
 }
 
-.ul_links {
-    position: fixed;
-    top: var(--altura-header);
-    left: -100%; /* Escondido a la izquierda */
-    width: 100%;
-    height: calc(100vh - var(--altura-header));
-    background: var(--color-primario-suave);
-    backdrop-filter: blur(10px);
+.icon-menu span {
+    display: block;
+    width: 30px;
+    height: 3px;
+    background: var(--blanco);
+}
+
+/* Menú de navegación */
+.menu {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 2rem;
-    transition: left 0.4s ease;
+    list-style: none;
 }
 
-.menu-input:checked + .label-hamburguesa + .ul_links {
-    left: 0; /* Aparece al marcar */
-}
-
-.links {
-    font-family: "Michroma", sans-serif;
-    font-size: 1.5rem;
-    color: var(--color-blanco);
+.menu li a {
+    color: var(--blanco);
     text-decoration: none;
+    margin-left: 30px;
+    font-size: 0.9rem;
+    transition: 0.3s;
 }
 
-/* SECCIÓN PRINCIPAL (HERO) */
-.section-contenido {
-    display: flex;
-    flex-direction: column; /* Móvil primero */
-    align-items: center;
-    padding: 3rem 1.5rem;
-    gap: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
+.menu li a:hover {
+    color: var(--azul);
 }
 
-.texto {
-    text-align: center;
-}
-
-.nombre {
-    font-family: "Michroma", sans-serif;
-    font-size: 2rem;
-    margin: 1rem 0;
-    background: linear-gradient(90deg, #4b88fa, #00d4ff);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.imagen-hero {
-    width: 100%;
-    max-width: 300px; /* Tamaño controlado para que no desaparezca */
-    height: auto;
-    border-radius: 20px;
-}
-
-/* SECCIÓN ACERCA DE MI */
-.nueva-seccion {
-    display: flex;
-    flex-direction: column;
-    padding: 3rem 1.5rem;
-    background: linear-gradient(180deg, #000, #222);
-}
-
-.imagen-perfil {
-    width: 100%;
-    max-width: 250px;
-    height: auto;
-    margin-bottom: 2rem;
-}
-
-.redes-sociales {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    margin-top: 1.5rem;
-}
-
-.icono img {
-    width: 40px;
-    height: 40px;
-    border: 2px solid var(--color-titulo);
-    border-radius: 50%;
-    padding: 5px;
-}
-
-/* DESKTOP (Pantallas grandes) */
-@media (min-width: 768px) {
-    .label-hamburguesa { display: none; }
-
-    .ul_links {
-        position: static;
-        flex-direction: row;
-        width: auto;
-        height: auto;
-        background: transparent;
-        left: 0;
+/* RESPONSIVE: MÓVIL */
+@media (max-width: 768px) {
+    .icon-menu {
+        display: flex; /* Aparece el icono en móviles */
     }
 
-    .links { font-size: 1rem; }
-
-    .section-contenido {
-        flex-direction: row;
-        text-align: left;
-        justify-content: space-between;
-    }
-
-    .texto { text-align: left; flex: 1; }
-
-    .imagen-hero {
-        max-width: 450px;
-        flex: 1;
-    }
-
-    .nueva-seccion {
-        flex-direction: row;
+    .menu {
+        position: fixed;
+        top: 80px;
+        left: -100%; /* Escondido a la izquierda */
+        width: 100%;
+        height: calc(100vh - 80px);
+        background: rgba(0, 0, 0, 0.95);
+        flex-direction: column;
         align-items: center;
-        max-width: 1200px;
-        margin: 0 auto;
+        padding-top: 50px;
+        transition: all 0.5s;
+    }
+
+    .menu li {
+        margin: 20px 0;
+    }
+
+    /* Cuando el checkbox esté marcado, movemos el menú a la vista */
+    #btn-menu:checked ~ .menu {
+        left: 0;
     }
 }
