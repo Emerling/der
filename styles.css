@@ -108,3 +108,112 @@ body {
         left: 0;
     }
 }
+/* SECCIÓN HERO */
+.hero {
+    background-color: var(--negro); /* Fondo negro total */
+    min-height: calc(100vh - 80px); /* Ocupa el resto de la pantalla */
+    display: flex;
+    align-items: center;
+    padding-top: 80px; /* Para que no lo tape el header fixed */
+}
+
+.hero-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem;
+    gap: 2rem;
+}
+
+/* Control del Texto */
+.hero-content {
+    flex: 1;
+}
+
+.hero-intro {
+    font-size: 1.2rem;
+    color: #888;
+}
+
+.hero-sub {
+    font-size: 1rem;
+    color: var(--azul);
+    margin-bottom: 1rem;
+}
+
+.hero-title {
+    font-family: 'Michroma', sans-serif;
+    font-size: 2.8rem;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    color: var(--blanco);
+}
+
+.hero-desc {
+    color: #ddd;
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+}
+
+.hero-btn {
+    background-color: var(--azul);
+    color: var(--blanco);
+    border: none;
+    padding: 15px 30px;
+    font-family: 'Syncopate', sans-serif;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: 0.3s ease;
+}
+
+.hero-btn:hover {
+    background-color: #3566cc;
+    transform: translateY(-3px);
+}
+
+/* Control de la Imagen */
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img-david {
+    width: 100%;
+    max-width: 450px; /* Tamaño máximo en PC */
+    height: auto;
+    object-fit: contain;
+    /* Esto ayuda a que la imagen no parpadee al cargar */
+    display: block; 
+}
+
+/* RESPONSIVE PARA EL HERO */
+@media (max-width: 768px) {
+    .hero-container {
+        flex-direction: column; /* Apilado vertical */
+        text-align: center;
+        padding-top: 2rem;
+    }
+
+    .hero-title {
+        font-size: 1.8rem;
+    }
+
+    .hero-image {
+        order: 2; /* Imagen abajo */
+        margin-top: 2rem;
+    }
+
+    .hero-content {
+        order: 1; /* Texto arriba */
+    }
+
+    .img-david {
+        max-width: 300px; /* Más pequeña en móvil */
+    }
+}
