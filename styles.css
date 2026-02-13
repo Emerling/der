@@ -123,26 +123,28 @@ html, body {
 
 .hero-text, .about-text { flex: 1; }
 
-
 .nombre {
     font-family: "Michroma", sans-serif;
-    font-size: 2.2rem;
-    color: var(--azul);
+    font-size: 2.5rem; /* Un poco más grande para el impacto */
     margin: 15px 0;
     
-    /* Efecto de resplandor neón */
-    text-shadow: 0 0 10px rgba(75, 136, 250, 0.4), 
-                 0 0 20px rgba(75, 136, 250, 0.2);
+    /* EFECTO DEGRADADO */
+    background: linear-gradient(90deg, #4b88fa, #a2c2ff, #4b88fa);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     
-    /* Opcional: una animación suave de "respiración" para el brillo */
-    animation: pulse-glow 3s infinite alternate;
+    /* EFECTO GLOW (Sutil pero presente) */
+    filter: drop-shadow(0 0 8px rgba(75, 136, 250, 0.5));
+    
+    /* ANIMACIÓN */
+    animation: shine 4s linear infinite;
 }
 
-@keyframes pulse-glow {
-    from { text-shadow: 0 0 10px rgba(75, 136, 250, 0.4); }
-    to { text-shadow: 0 0 20px rgba(75, 136, 250, 0.7), 0 0 30px rgba(75, 136, 250, 0.4); }
-}
-
+/* Animación para que el degradado se mueva */
+@keyframes shine {
+    to { background-position: 200% center; }
+    }
 .titulo-sec {
     font-family: "Michroma", sans-serif;
     color: var(--azul);
