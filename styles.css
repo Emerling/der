@@ -70,14 +70,32 @@ body {
     padding-top: 80px; /* Más espacio arriba para que respire */
     gap: 20px; /* Espacio entre cada link */
 }
+
 .menu a {
     color: var(--blanco);
     text-decoration: none;
-    margin-left: 25px;
+    font-family: 'Michroma', sans-serif;
+    position: relative; /* Necesario para posicionar la línea */
+    padding-bottom: 5px;
     font-size: 1.1rem;
-    font-family: "Michroma", sans-serif;
 }
 
+/* Creamos la línea invisible debajo del texto */
+.menu a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0; /* Empieza con ancho cero */
+    height: 2px;
+    background-color: var(--azul);
+    transition: width 0.3s ease; /* Efecto de crecimiento */
+}
+
+/* Al pasar el mouse o tocar el link, la línea crece */
+.menu a:hover::after {
+    width: 100%;
+}
 /* CONTENEDORES */
 .container {
     max-width: 1200px;
@@ -139,18 +157,17 @@ body {
 
 .img-david,
 .img-perfil {
-    
     max-width: 400px;
     height: auto;
     display: block;
     margin: 0 auto;
-   /* border-radius: 15px;*/
+    /* border-radius: 15px;*/
 }
-.img-david{
-  width: 140px;
+.img-david {
+    width: 140px;
 }
-.img-perfil{
-  width: 200px;
+.img-perfil {
+    width: 200px;
 }
 /* REDES SOCIALES */
 .socials {
@@ -180,18 +197,30 @@ body {
     .icon-menu {
         display: flex;
     }
+
     .menu {
         position: fixed;
         top: 70px;
         left: -100%;
         width: 100%;
         height: calc(100vh - 70px);
-        background: rgba(0, 0, 0, 0.98);
+
+        /* Fondo semitransparente negro */
+        background: rgba(0, 0, 0, 0.5);
+
+        /* El efecto de desenfoque */
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(
+            10px
+        ); /* Para compatibilidad con Safari/iOS */
+
         flex-direction: column;
         align-items: center;
         padding-top: 40px;
         transition: 0.4s;
+        gap: 20px;
     }
+
     #btn-menu:checked ~ .menu {
         left: 0;
     }
