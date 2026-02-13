@@ -123,10 +123,35 @@ html, body {
 
 .hero-text, .about-text { flex: 1; }
 
+/* "Yo soy" y "Desarrollador Fullstack" con el mismo tamaño delgado */
+.hero-intro, .hero-sub {
+    font-family: "Syncopate", sans-serif;
+    font-size: 1.1rem; /* Tamaño igualado y discreto */
+    font-weight: 400;  /* Delgado */
+    color: #888;       /* Gris para que no compita con el nombre */
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* El "soy" resaltado: Más grande y grueso */
+.hero-intro strong {
+    font-size: 1.8rem;  /* Más grande que el resto */
+    font-weight: 800;   /* Muy grueso */
+    color: var(--blanco);
+    margin-left: 5px;
+}
+
+/* Ajuste específico para la separación */
+.hero-sub {
+    margin-bottom: 10px;
+    display: block;    /* Para que se comporte como bloque */
+}
+
 .nombre {
     font-family: "Michroma", sans-serif;
-    font-size: 2.5rem; /* Un poco más grande para el impacto */
+    font-size: 2.8rem; /* Un poco más grande para el impacto */
     margin: 15px 0;
+    margin-top: 10px
     
     /* EFECTO DEGRADADO */
     background: linear-gradient(90deg,rgba(63, 55, 212, 1) 7%, rgba(50, 135, 209, 1) 22%, rgba(202, 236, 252, 1) 59%, rgba(5, 132, 250, 1) 100%);
