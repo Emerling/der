@@ -207,7 +207,10 @@ html, body {
     }
 
     #btn-menu:checked ~ .menu { left: 0; }
-
+.hero {
+        /* Esto empuja el contenido hacia abajo para que no choque con el logo */
+        padding-top: 50px; 
+}
     .hero-flex, .about-flex { flex-direction: column; text-align: center; }
 
     .hero-img { order: 2; }
