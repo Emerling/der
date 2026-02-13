@@ -11,8 +11,7 @@
     box-sizing: border-box;
 }
 
-html,
-body {
+html, body {
     width: 100%;
     overflow-x: hidden;
     background-color: var(--negro);
@@ -20,20 +19,17 @@ body {
     color: var(--blanco);
 }
 
-/* HEADER */
+/* --- HEADER (Sin Blur, Sólido como pediste) --- */
 .header {
     width: 100%;
     height: 70px;
-    background: rgba(0, 0, 0, 0.6); /* Bajamos la opacidad para que el blur se note más */
+    background: var(--negro); /* Sólido */
     position: fixed;
     top: 0;
-    left: 0; /* Aseguramos que pegue a la izquierda */
+    left: 0;
     z-index: 1000;
-    
     border-bottom: 2px solid var(--azul); 
     box-shadow: 0 4px 15px rgba(75, 136, 250, 0.15);
-    
-    /* Quitamos el display flex de aquí para que el .navbar haga su trabajo */
 }
 
 .navbar {
@@ -41,7 +37,7 @@ body {
     height: 100%;
     margin: 0 auto;
     display: flex;
-    justify-content: space-between; /* Esto empuja logo a la izquierda y menú a la derecha */
+    justify-content: space-between;
     align-items: center;
     padding: 0 20px;
 }
@@ -50,11 +46,10 @@ body {
     font-family: "Michroma", sans-serif;
     color: var(--azul);
     font-size: 1.3rem;
-    text-shadow: 0 0 10px rgba(75, 136, 250, 0.5); /* Brillo discreto */
+    text-shadow: 0 0 10px rgba(75, 136, 250, 0.5);
 }
-#btn-menu {
-    display: none;
-}
+
+#btn-menu { display: none; }
 
 .icon-menu {
     display: none;
@@ -72,47 +67,45 @@ body {
 .menu {
     display: flex;
     list-style: none;
-    gap: 25px; /* Quitamos el padding-top que pusiste aquí, eso solo va en el responsive */
+    gap: 25px;
 }
+
 .menu a {
     color: var(--blanco);
     text-decoration: none;
     font-family: "Michroma", sans-serif;
-    position: relative; /* Necesario para posicionar la línea */
+    position: relative;
     padding-bottom: 5px;
     font-size: 1.1rem;
 }
 
-/* Creamos la línea invisible debajo del texto */
 .menu a::after {
     content: "";
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 0; /* Empieza con ancho cero */
+    width: 0;
     height: 2px;
     background-color: var(--azul);
-    transition: width 0.3s ease; /* Efecto de crecimiento */
+    transition: width 0.3s ease;
 }
 
-/* Al pasar el mouse o tocar el link, la línea crece */
-.menu a:hover::after {
-    width: 100%;
-}
-/* CONTENEDORES */
+.menu a:hover::after { width: 100%; }
+
+/* --- SECCIONES --- */
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 100px 20px 60px; /* Ajuste para que el header no tape el texto */
+    padding: 100px 20px 60px;
 }
 
-/* SECCIONES */
 .hero {
     background: var(--negro);
     min-height: 100vh;
     display: flex;
     align-items: center;
 }
+
 .about {
     background: linear-gradient(180deg, var(--negro) 0%, var(--gris) 100%);
     min-height: 100vh;
@@ -120,64 +113,50 @@ body {
     align-items: center;
 }
 
-.hero-flex,
-.about-flex {
+.hero-flex, .about-flex {
     display: flex;
     align-items: center;
     gap: 40px;
     width: 100%;
 }
 
-/* TEXTOS */
-.hero-text,
-.about-text {
-    flex: 1;
-}
+.hero-text, .about-text { flex: 1; }
+
 .nombre {
     font-family: "Michroma", sans-serif;
     font-size: 2.2rem;
     color: var(--azul);
     margin: 15px 0;
 }
+
 .titulo-sec {
     font-family: "Michroma", sans-serif;
     color: var(--azul);
     font-size: 1.8rem;
     margin-bottom: 20px;
 }
+
 .blue-text {
     color: var(--azul);
     font-weight: bold;
     margin-top: 15px;
 }
 
-/* IMÁGENES */
-.hero-img,
-.about-img {
-    flex: 1;
-    text-align: center;
-}
+.hero-img, .about-img { flex: 1; text-align: center; }
 
-.img-david,
-.img-perfil {
+/* --- AJUSTE DE IMÁGENES --- */
+.img-david, .img-perfil {
     max-width: 400px;
     height: auto;
     display: block;
     margin: 0 auto;
-    /* border-radius: 15px;*/
 }
-.img-david {
-    width: 140px;
-}
-.img-perfil {
-    width: 200px;
-}
+
+.img-david { width: 180px; } /* Un poco más grande para que se vea mejor */
+.img-perfil { width: 220px; }
+
 /* REDES SOCIALES */
-.socials {
-    display: flex;
-    gap: 15px;
-    margin-top: 25px;
-}
+.socials { display: flex; gap: 15px; margin-top: 25px; }
 .s-link {
     width: 45px;
     height: 45px;
@@ -188,18 +167,11 @@ body {
     justify-content: center;
     overflow: hidden;
 }
-.s-link img {
-    width: 22px;
-    height: 22px;
-    object-fit: contain;
-    background: transparent;
-}
+.s-link img { width: 22px; height: 22px; object-fit: contain; }
 
-/* RESPONSIVE */
+/* --- RESPONSIVE --- */
 @media (max-width: 768px) {
-    .icon-menu {
-        display: flex;
-    }
+    .icon-menu { display: flex; }
     
     .menu {
         position: fixed;
@@ -208,49 +180,28 @@ body {
         width: 100%;
         height: calc(100vh - 70px);
         
-        /* Fondo semitransparente negro */
-        background: rgba(0, 0, 0, 0.5); 
-        
-        /* El efecto de desenfoque */
-        backdrop-filter: blur(20px); 
-        -webkit-backdrop-filter: blur(20px); /* Para compatibilidad con Safari/iOS */
+        /* Ajuste de Blur: Fondo más claro para que el desenfoque se note */
+        background: rgba(10, 10, 10, 0.6); 
+        backdrop-filter: blur(20px) saturate(180%); /* Saturar ayuda a que se note el blur en fondos oscuros */
+        -webkit-backdrop-filter: blur(20px) saturate(180%);
         
         flex-direction: column;
         align-items: center;
-        padding-top: 40px;
-        transition: 0.4s;
-        gap: 20px;
+        justify-content: center; /* Centrado vertical para evitar desorden */
+        transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        gap: 30px;
+        z-index: 999;
     }
 
-    #btn-menu:checked ~ .menu {
-        left: 0;
-    }
+    #btn-menu:checked ~ .menu { left: 0; }
 
-    .hero-flex,
-    .about-flex {
-        flex-direction: column;
-        text-align: center;
-    }
+    .hero-flex, .about-flex { flex-direction: column; text-align: center; }
 
-    /* David-1 abajo, David-2 arriba */
-    .hero-img {
-        order: 2;
-    }
-    .hero-text {
-        order: 1;
-    }
-    .about-img {
-        order: 1;
-    }
-    .about-text {
-        order: 2;
-    }
+    .hero-img { order: 2; }
+    .hero-text { order: 1; }
+    .about-img { order: 1; }
+    .about-text { order: 2; }
 
-    .img-david,
-    .img-perfil {
-        max-width: 280px;
+    .img-david, .img-perfil { max-width: 280px; }
+    .socials { justify-content: center; }
     }
-    .socials {
-        justify-content: center;
-    }
-}
