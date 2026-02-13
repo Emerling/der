@@ -96,7 +96,7 @@ html, body {
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 60px 20px
+    padding: 60px 20px; /* Se añadió el punto y coma faltante aquí */
 }
 
 .hero {
@@ -104,7 +104,7 @@ html, body {
     min-height: 85vh;
     display: flex;
     align-items: center;
-    padding-top:20px;
+    padding-top: 20px;
 }
 
 .about {
@@ -123,62 +123,66 @@ html, body {
 
 .hero-text, .about-text { flex: 1; }
 
-/* "Yo soy" y "Desarrollador Fullstack" con el mismo tamaño delgado */
+/* "Yo soy" y "Desarrollador Fullstack" */
 .hero-intro, .hero-sub {
     font-family: "Syncopate", sans-serif;
-    font-size: 1.1rem; /* Tamaño igualado y discreto */
-    font-weight: 400;  /* Delgado */
-    color: #888;       /* Gris para que no compita con el nombre */
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: #888;
     text-transform: uppercase;
     letter-spacing: 2px;
 }
 
-/* El "soy" resaltado: Más grande y grueso */
 .hero-intro strong {
-    font-size: 1.8rem;  /* Más grande que el resto */
-    font-weight: 800;   /* Muy grueso */
+    font-size: 1.8rem;
+    font-weight: 800;
     color: var(--blanco);
     margin-left: 5px;
 }
 
-/* Ajuste específico para la separación */
 .hero-sub {
     margin-bottom: 10px;
-    display: block;    /* Para que se comporte como bloque */
+    display: block;
 }
 
 .nombre {
     font-family: "Michroma", sans-serif;
     font-size: 2.8rem;
     margin: 15px 0;
-    margin-top: 10px; /* AQUÍ faltaba el punto y coma */
+    margin-top: 10px; 
     
-    /* EFECTO DEGRADADO */
-    /* Usamos un degradado más limpio para que no desaparezca en el medio */
     background: linear-gradient(90deg, #3f37d4 0%, #3287d1 30%, #caecfc 50%, #0584fa 80%, #3f37d4 100%);
     background-size: 200% auto;
     
-    /* IMPORTANTE: Estas líneas deben ir juntas sin errores arriba */
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
     
-    /* EFECTO GLOW (Sutil pero presente) */
+    /* El drop-shadow es lo que da el efecto glow real */
     filter: drop-shadow(0 0 12px rgba(75, 136, 250, 0.6));
-    
-    /* ANIMACIÓN */
     animation: shine 4s linear infinite;
 }
 
-/* No olvides esta animación al final de tu CSS */
+/* --- ANIMACIÓN --- */
 @keyframes shine {
     to { background-position: 200% center; }
-    }
+}
 
-.blue-text {
-    color: var(--azul);
-    font-weight: bold;
-    margin-top: 15px;
+/* --- AJUSTE PARA MÓVIL (MUY IMPORTANTE) --- */
+@media (max-width: 768px) {
+    .nombre {
+        font-size: 1.6rem; /* Bajamos el tamaño para que quepa en el celular */
+        line-height: 1.3;
+    }
+    
+    .hero-intro strong {
+        font-size: 1.4rem; /* Ajustamos también el "soy" */
+    }
+    
+    .hero-flex {
+        flex-direction: column;
+        text-align: center;
+    }
 }
 /* BOTÓN REFORZADO */
 .btn {
