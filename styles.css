@@ -29,8 +29,7 @@ body {
     top: 0;
     left: 0; /* Aseguramos que pegue a la izquierda */
     z-index: 1000;
-    backdrop-filter: blur(12px); /* Aumentamos un poco el blur */
-    -webkit-backdrop-filter: blur(12px);
+    
     border-bottom: 2px solid var(--azul); 
     box-shadow: 0 4px 15px rgba(75, 136, 250, 0.15);
     
