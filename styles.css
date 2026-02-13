@@ -28,17 +28,17 @@ body {
     position: fixed;
     top: 0;
     z-index: 1000;
-
+    
     /* Efecto de desenfoque también en la barra principal */
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-
+    
     /* LA LÍNEA AZUL INFERIOR */
-    border-bottom: 2px solid var(--azul);
-
+    border-bottom: 2px solid var(--azul); 
+    
     /* Opcional: un ligero resplandor azul para que no se vea tan "plana" */
-    box-shadow: 0 4px 15px rgba(75, 136, 250, 0.2);
-
+    box-shadow: 0 4px 15px rgba(75, 136, 250, 0.2); 
+    
     display: flex;
     align-items: center;
 }
@@ -54,7 +54,7 @@ body {
 }
 
 .logo {
-    font-family: 'Michroma', sans-serif;
+    font-family: "Michroma", sans-serif;
     color: var(--azul);
     font-size: 1.3rem;
     text-shadow: 0 0 10px rgba(75, 136, 250, 0.5); /* Brillo discreto */
@@ -209,23 +209,21 @@ body {
     .icon-menu {
         display: flex;
     }
-
+    
     .menu {
         position: fixed;
         top: 70px;
         left: -100%;
         width: 100%;
         height: calc(100vh - 70px);
-
+        
         /* Fondo semitransparente negro */
-        background: rgba(0, 0, 0, 0.5);
-
+        background: rgba(0, 0, 0, 0.7); 
+        
         /* El efecto de desenfoque */
-        backdrop-filter: blur(5px);
-        -webkit-backdrop-filter: blur(
-            10px
-        ); /* Para compatibilidad con Safari/iOS */
-
+        backdrop-filter: blur(10px); 
+        -webkit-backdrop-filter: blur(10px); /* Para compatibilidad con Safari/iOS */
+        
         flex-direction: column;
         align-items: center;
         padding-top: 40px;
