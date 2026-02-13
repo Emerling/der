@@ -181,7 +181,7 @@ html, body {
         height: calc(100vh - 70px);
         
         /* Ajuste de Blur: Fondo más claro para que el desenfoque se note */
-        background: rgba(20, 20, 20, 0.5); 
+        background: rgba(40, 40, 40, 0.45); 
         backdrop-filter: blur(10px) saturate(180%); /* Saturar ayuda a que se note el blur en fondos oscuros */
         -webkit-backdrop-filter: blur(10px) saturate(180%);
         
