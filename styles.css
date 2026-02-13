@@ -2,33 +2,38 @@
     --azul: #4b88fa;
     --negro: #000000;
     --blanco: #ffffff;
+    --gris: #333333;
 }
 
+/* 1. RESET Y BLOQUEO DE DESBORDE */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body {
-    background-color: #111; /* Fondo oscuro para contraste */
+html, body {
+    width: 100%;
+    overflow-x: hidden; /* Evita que la web se mueva a los lados */
+    background-color: var(--negro);
     font-family: 'Syncopate', sans-serif;
+    color: var(--blanco);
 }
 
+/* 2. HEADER FIJO */
 .header {
     width: 100%;
-    height: 80px;
+    height: 70px;
     background: var(--negro);
-    display: flex;
-    align-items: center;
-    position: fixed; /* Lo fijamos arriba */
+    position: fixed;
     top: 0;
     z-index: 1000;
+    border-bottom: 1px solid #222;
 }
 
 .navbar {
-    width: 100%;
     max-width: 1200px;
+    height: 100%;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
@@ -39,181 +44,104 @@ body {
 .logo {
     font-family: 'Michroma', sans-serif;
     color: var(--azul);
-    font-size: 1.5rem;
+    font-size: 1.3rem;
 }
 
-/* Ocultar el checkbox */
-#btn-menu {
-    display: none;
-}
+/* 3. MENÚ HAMBURGUESA */
+#btn-menu { display: none; }
 
-/* Icono Hamburguesa */
 .icon-menu {
-    display: none; /* Se oculta en PC */
+    display: none;
     flex-direction: column;
     gap: 5px;
     cursor: pointer;
 }
 
 .icon-menu span {
-    display: block;
-    width: 30px;
+    width: 25px;
     height: 3px;
     background: var(--blanco);
 }
 
-/* Menú de navegación */
 .menu {
     display: flex;
     list-style: none;
 }
 
-.menu li a {
+.menu a {
     color: var(--blanco);
     text-decoration: none;
-    margin-left: 30px;
-    font-size: 0.9rem;
-    transition: 0.3s;
+    margin-left: 25px;
+    font-size: 0.8rem;
+    font-family: 'Michroma', sans-serif;
 }
 
-.menu li a:hover {
-    color: var(--azul);
-}
-
-/* RESPONSIVE: MÓVIL */
-@media (max-width: 768px) {
-    .icon-menu {
-        display: flex; /* Aparece el icono en móviles */
-    }
-
-    .menu {
-        position: fixed;
-        top: 80px;
-        left: -100%; /* Escondido a la izquierda */
-        width: 100%;
-        height: calc(100vh - 80px);
-        background: rgba(0, 0, 0, 0.95);
-        flex-direction: column;
-        align-items: center;
-        padding-top: 50px;
-        transition: all 0.5s;
-    }
-
-    .menu li {
-        margin: 20px 0;
-    }
-
-    /* Cuando el checkbox esté marcado, movemos el menú a la vista */
-    #btn-menu:checked ~ .menu {
-        left: 0;
-    }
-}
-/* SECCIÓN HERO */
-.hero {
-    background-color: var(--negro); /* Fondo negro total */
-    min-height: calc(100vh - 80px); /* Ocupa el resto de la pantalla */
-    display: flex;
-    align-items: center;
-    padding-top: 80px; /* Para que no lo tape el header fixed */
-}
-
-.hero-container {
-    width: 100%;
+/* 4. CONTENEDORES GLOBALES */
+.container {
     max-width: 1200px;
     margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 2rem;
-    gap: 2rem;
+    padding: 80px 20px; /* 80px arriba para no chocar con el header */
 }
 
-/* Control del Texto */
-.hero-content {
-    flex: 1;
-}
+/* 5. SECCIÓN HERO (Negro) */
+.hero { background: var(--negro); min-height: 100vh; display: flex; align-items: center; }
 
-.hero-intro {
-    font-size: 1.2rem;
-    color: #888;
-}
+.hero-flex { display: flex; align-items: center; gap: 40px; }
+.hero-text { flex: 1; }
+.hero-img { flex: 1; text-align: center; }
 
-.hero-sub {
-    font-size: 1rem;
-    color: var(--azul);
-    margin-bottom: 1rem;
-}
+.nombre { font-family: 'Michroma', sans-serif; font-size: 2.2rem; color: var(--azul); margin: 15px 0; }
+.intro { color: #888; }
+.btn { background: var(--azul); color: #fff; border: none; padding: 12px 25px; cursor: pointer; font-weight: bold; border-radius: 4px; margin-top: 20px; }
 
-.hero-title {
-    font-family: 'Michroma', sans-serif;
-    font-size: 2.8rem;
-    line-height: 1.2;
-    margin-bottom: 1rem;
-    color: var(--blanco);
-}
+.hero-img img { width: 100%; max-width: 400px; height: auto; display: block; margin: 0 auto; }
 
-.hero-desc {
-    color: #ddd;
-    font-size: 1.1rem;
-    margin-bottom: 2rem;
-}
+/* 6. SECCIÓN ABOUT (Degradado) */
+.about { background: linear-gradient(180deg, var(--negro) 0%, var(--gris) 100%); }
 
-.hero-btn {
-    background-color: var(--azul);
-    color: var(--blanco);
-    border: none;
-    padding: 15px 30px;
-    font-family: 'Syncopate', sans-serif;
-    font-weight: bold;
-    cursor: pointer;
-    border-radius: 4px;
-    transition: 0.3s ease;
-}
+.about-flex { display: flex; align-items: center; gap: 40px; }
+.about-img { flex: 1; }
+.about-text { flex: 1; }
 
-.hero-btn:hover {
-    background-color: #3566cc;
-    transform: translateY(-3px);
-}
+.about-img img { width: 100%; max-width: 350px; height: auto; border-radius: 10px; display: block; margin: 0 auto; }
+.titulo-sec { font-family: 'Michroma', sans-serif; color: var(--azul); font-size: 1.8rem; margin-bottom: 20px; }
+.blue-text { color: var(--azul); font-weight: bold; margin-top: 15px; }
 
-/* Control de la Imagen */
-.hero-image {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+/* 7. REDES SOCIALES (Tamaño fijo para que no se rompan) */
+.socials { display: flex; gap: 15px; margin-top: 25px; }
+.s-link { width: 45px; height: 45px; border: 2px solid var(--azul); border-radius: 50%; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+.s-link img { width: 22px; height: 22px; object-fit: contain; }
 
-.img-david {
-    width: 100%;
-    max-width: 450px; /* Tamaño máximo en PC */
-    height: auto;
-    object-fit: contain;
-    /* Esto ayuda a que la imagen no parpadee al cargar */
-    display: block; 
-}
-
-/* RESPONSIVE PARA EL HERO */
+/* 8. RESPONSIVE (Móvil) */
 @media (max-width: 768px) {
-    .hero-container {
-        flex-direction: column; /* Apilado vertical */
-        text-align: center;
-        padding-top: 2rem;
+    .icon-menu { display: flex; }
+    
+    .menu {
+        position: fixed;
+        top: 70px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 70px);
+        background: rgba(0,0,0,0.95);
+        flex-direction: column;
+        align-items: center;
+        padding-top: 40px;
+        transition: 0.4s;
     }
 
-    .hero-title {
-        font-size: 1.8rem;
-    }
+    #btn-menu:checked ~ .menu { left: 0; }
 
-    .hero-image {
-        order: 2; /* Imagen abajo */
-        margin-top: 2rem;
-    }
+    /* Apilado de secciones */
+    .hero-flex { flex-direction: column; text-align: center; }
+    .about-flex { flex-direction: column; text-align: center; }
 
-    .hero-content {
-        order: 1; /* Texto arriba */
-    }
+    /* Orden: David-1 abajo, David-2 arriba */
+    .hero-img { order: 2; }
+    .hero-text { order: 1; }
+    .about-img { order: 1; }
+    .about-text { order: 2; }
 
-    .img-david {
-        max-width: 240px; /* Más pequeña en móvil */
-    }
+    .nombre { font-size: 1.7rem; }
+    .hero-img img, .about-img img { max-width: 250px; } /* Imagen más pequeña en móvil */
+    .socials { justify-content: center; }
 }
