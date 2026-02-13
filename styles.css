@@ -183,6 +183,23 @@ html, body {
         flex-direction: column;
         text-align: center;
     }
+    
+    .hero {
+        /* 1. Reducimos el min-height para que no ocupe toda la pantalla y suba */
+        min-height: 70vh; 
+        
+        /* 2. Cambiamos el alineamiento de 'center' a 'flex-start' para que pegue arriba */
+        align-items: flex-start; 
+        
+        /* 3. Ajustamos el espacio superior para que no choque con el header */
+        padding-top: 40px; 
+    }
+
+    .container {
+        /* Reducimos el padding del contenedor para ganar espacio */
+        padding: 20px 20px;
+    }
+
 }
 /* BOTÓN REFORZADO */
 .btn {
