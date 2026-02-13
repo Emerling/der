@@ -196,7 +196,7 @@ html, body {
     .hero {
         min-height: auto;    /* Deja de forzar que ocupe toda la pantalla */
         align-items: flex-start; /* Pega el contenido al tope */
-        padding-top: 30px;   /* Solo el espacio necesario para no chocar con el header */
+        padding-top: 5px;   /* Solo el espacio necesario para no chocar con el header */
     }
 
     .container {
