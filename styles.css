@@ -101,9 +101,10 @@ html, body {
 
 .hero {
     background: var(--negro);
-    min-height: 100vh;
+    min-height: 85vh;
     display: flex;
     align-items: center;
+    padding-top:45px;
 }
 
 .about {
