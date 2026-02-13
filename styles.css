@@ -23,7 +23,7 @@ html, body {
 .header {
     width: 100%;
     height: 70px;
-    background: var(--negro); /* Sólido */
+  /*  background: var(--negro); /* Sólido */*/
     position: fixed;
     top: 0;
     left: 0;
