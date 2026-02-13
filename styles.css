@@ -206,7 +206,7 @@ font-family: "Michroma", sans-serif
     .hero {
         min-height: auto;    /* Deja de forzar que ocupe toda la pantalla */
         align-items: flex-start; /* Pega el contenido al tope */
-        padding-top: 10px;   /* Solo el espacio necesario para no chocar con el header */
+        padding-top: 18px;   /* Solo el espacio necesario para no chocar con el header */
     }
 
     .container {
@@ -290,8 +290,6 @@ font-family: "Michroma", sans-serif
     overflow: hidden;
 }
 .s-link img { width: 22px; height: 22px; object-fit: contain; }
-
-/* --- ÚLTIMA PARTE DEL ARCHIVO --- */
 
 @keyframes fadeInUp {
     from {
