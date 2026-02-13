@@ -154,34 +154,36 @@ html, body {
     font-weight: bold;
     margin-top: 15px;
 }
+/* BOTÓN REFORZADO */
 .btn {
-    background-color: var(--azul);
-    color: var(--blanco);
-    border: none;
-    padding: 12px 28px;
+    display: inline-block; /* Asegura que respete el padding */
+    background-color: var(--azul) !important;
+    color: var(--blanco) !important;
+    border: none !important;
+    padding: 14px 30px;
     font-family: 'Syncopate', sans-serif;
     font-size: 0.8rem;
     font-weight: bold;
     text-transform: uppercase;
+    text-decoration: none;
     cursor: pointer;
-    border-radius: 4px;
+    border-radius: 5px;
     margin-top: 25px;
     transition: all 0.3s ease;
-    /* Resplandor azul suave */
-    box-shadow: 0 4px 15px rgba(75, 136, 250, 0.3);
+    box-shadow: 0 4px 15px rgba(75, 136, 250, 0.4);
+    outline: none;
+    -webkit-appearance: none; /* Quita estilos de botones de Android/iOS */
 }
 
 .btn:hover {
-    background-color: #3566cc; /* Un azul un poco más oscuro al pasar el dedo */
-    transform: translateY(-3px); /* Pequeño salto hacia arriba */
-    box-shadow: 0 6px 20px rgba(75, 136, 250, 0.5);
+    background-color: #3566cc !important;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(75, 136, 250, 0.6);
 }
 
 .btn:active {
     transform: translateY(-1px);
     }
-.hero-img, .about-img { flex: 1; text-align: center; }
-
 /* --- AJUSTE DE IMÁGENES --- */
 .img-david, .img-perfil {
     max-width: 400px;
