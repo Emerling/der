@@ -89,7 +89,7 @@ html, body {
 .titulo-sec { font-family: 'Michroma', sans-serif; color: var(--azul); font-size: 1.8rem; margin-bottom: 20px; }
 .blue-text { color: var(--azul); font-weight: bold; margin-top: 15px; }
 
-/* IMÁGENES - AQUÍ VAN LAS CORRECCIONES QUE PREGUNTASTE */
+/* IMÁGENES */
 .hero-img, .about-img { flex: 1; text-align: center; }
 
 .img-david, .img-perfil { 
@@ -101,7 +101,7 @@ html, body {
     /* Las propiedades de "reserva" */
     aspect-ratio: 1 / 1; 
     object-fit: cover;
-    background-color: #222; 
+    background-color: red; 
     border-radius: 15px;
 }
 
