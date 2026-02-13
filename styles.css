@@ -231,7 +231,7 @@ body {
     .hero {
         min-height: auto; /* Deja de forzar que ocupe toda la pantalla */
         align-items: flex-start; /* Pega el contenido al tope */
-        padding-top: 70px; /* Solo el espacio necesario para no chocar con el header */
+        padding-top: 85px; /* Solo el espacio necesario para no chocar con el header */
     }
 
     .container {
@@ -320,7 +320,11 @@ body {
 .img-perfil {
     width: 220px;
 }
-
+.titulo-sec{
+margin-top: 15px;
+margin-bottom: 10px;
+  color: var(--azul);
+}
 /* REDES SOCIALES */
 .socials {
     display: flex;
@@ -330,19 +334,25 @@ body {
 .s-link {
     width: 45px;
     height: 45px;
-    border: 2px solid var(--azul);
+    border: 3px solid var(--azul);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
-}
-.s-link img {
-    width: 22px;
-    height: 22px;
-    object-fit: contain;
+    position: relative;  /* Agregado para posicionar el contenido correctamente */
 }
 
+.s-link img {
+    width: 100%; /* Cambiado para que ocupe todo el ancho del círculo */
+    height: 100%; /* Cambiado para que ocupe toda la altura del círculo */
+    object-fit: cover; /* Cambiado para ajustarse al contenedor sin distorsionar la imagen */
+    position: absolute; /* Hacemos que la imagen esté en posición absoluta */
+    top: 0; /* Alineamos en la parte superior */
+    left: 0; /* Alineamos a la izquierda */
+}
+
+/* Animaciones */
 @keyframes fadeInUp {
     from {
         opacity: 0;
