@@ -104,7 +104,7 @@ html, body {
     min-height: 85vh;
     display: flex;
     align-items: center;
-    padding-top:45px;
+    padding-top:20px;
 }
 
 .about {
@@ -135,7 +135,7 @@ html, body {
     -webkit-text-fill-color: transparent;
     
     /* EFECTO GLOW (Sutil pero presente) */
-    filter: drop-shadow(0 0 8px rgba(75, 136, 250, 0.5));
+    filter: drop-shadow(0 0 8px rgba(75, 136, 250, 0.7));
     
     /* ANIMACIÓN */
     animation: shine 4s linear infinite;
