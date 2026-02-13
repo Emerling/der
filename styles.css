@@ -5,7 +5,6 @@
     --gris: #333333;
 }
 
-/* 1. RESET Y BLOQUEO DE DESBORDE */
 * {
     margin: 0;
     padding: 0;
@@ -14,13 +13,13 @@
 
 html, body {
     width: 100%;
-    overflow-x: hidden; /* Evita que la web se mueva a los lados */
+    overflow-x: hidden;
     background-color: var(--negro);
     font-family: 'Syncopate', sans-serif;
     color: var(--blanco);
 }
 
-/* 2. HEADER FIJO */
+/* HEADER */
 .header {
     width: 100%;
     height: 70px;
@@ -47,7 +46,6 @@ html, body {
     font-size: 1.3rem;
 }
 
-/* 3. MENÚ HAMBURGUESA */
 #btn-menu { display: none; }
 
 .icon-menu {
@@ -63,11 +61,7 @@ html, body {
     background: var(--blanco);
 }
 
-.menu {
-    display: flex;
-    list-style: none;
-}
-
+.menu { display: flex; list-style: none; }
 .menu a {
     color: var(--blanco);
     text-decoration: none;
@@ -76,72 +70,66 @@ html, body {
     font-family: 'Michroma', sans-serif;
 }
 
-/* 4. CONTENEDORES GLOBALES */
+/* CONTENEDORES */
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 80px 20px; /* 80px arriba para no chocar con el header */
+    padding: 100px 20px 60px; /* Ajuste para que el header no tape el texto */
 }
 
-/* 5. SECCIÓN HERO (Negro) */
+/* SECCIONES */
 .hero { background: var(--negro); min-height: 100vh; display: flex; align-items: center; }
+.about { background: linear-gradient(180deg, var(--negro) 0%, var(--gris) 100%); min-height: 100vh; display: flex; align-items: center; }
 
-.hero-flex { display: flex; align-items: center; gap: 40px; }
-.hero-text { flex: 1; }
-.hero-img { flex: 1; text-align: center; }
+.hero-flex, .about-flex { display: flex; align-items: center; gap: 40px; width: 100%; }
 
+/* TEXTOS */
+.hero-text, .about-text { flex: 1; }
 .nombre { font-family: 'Michroma', sans-serif; font-size: 2.2rem; color: var(--azul); margin: 15px 0; }
-.intro { color: #888; }
-.btn { background: var(--azul); color: #fff; border: none; padding: 12px 25px; cursor: pointer; font-weight: bold; border-radius: 4px; margin-top: 20px; }
-
-.hero-img img { width: 100%; max-width: 400px; height: auto; display: block; margin: 0 auto; }
-
-/* 6. SECCIÓN ABOUT (Degradado) */
-.about { background: linear-gradient(180deg, var(--negro) 0%, var(--gris) 100%); }
-
-.about-flex { display: flex; align-items: center; gap: 40px; }
-.about-img { flex: 1; }
-.about-text { flex: 1; }
-
-.about-img img { width: 100%; max-width: 350px; height: auto; border-radius: 10px; display: block; margin: 0 auto; }
 .titulo-sec { font-family: 'Michroma', sans-serif; color: var(--azul); font-size: 1.8rem; margin-bottom: 20px; }
 .blue-text { color: var(--azul); font-weight: bold; margin-top: 15px; }
 
-/* 7. REDES SOCIALES (Tamaño fijo para que no se rompan) */
+/* IMÁGENES - AQUÍ VAN LAS CORRECCIONES QUE PREGUNTASTE */
+.hero-img, .about-img { flex: 1; text-align: center; }
+
+.img-david, .img-perfil { 
+    width: 100%; 
+    max-width: 400px; 
+    height: auto; 
+    display: block; 
+    margin: 0 auto;
+    /* Las propiedades de "reserva" */
+    aspect-ratio: 1 / 1; 
+    object-fit: cover;
+    background-color: #222; 
+    border-radius: 15px;
+}
+
+/* REDES SOCIALES */
 .socials { display: flex; gap: 15px; margin-top: 25px; }
 .s-link { width: 45px; height: 45px; border: 2px solid var(--azul); border-radius: 50%; display: flex; align-items: center; justify-content: center; overflow: hidden; }
-.s-link img { width: 22px; height: 22px; object-fit: contain; }
+.s-link img { width: 22px; height: 22px; object-fit: contain; background: transparent; }
 
-/* 8. RESPONSIVE (Móvil) */
+/* RESPONSIVE */
 @media (max-width: 768px) {
     .icon-menu { display: flex; }
-    
     .menu {
-        position: fixed;
-        top: 70px;
-        left: -100%;
-        width: 100%;
-        height: calc(100vh - 70px);
-        background: rgba(0,0,0,0.95);
-        flex-direction: column;
-        align-items: center;
-        padding-top: 40px;
+        position: fixed; top: 70px; left: -100%;
+        width: 100%; height: calc(100vh - 70px);
+        background: rgba(0,0,0,0.98);
+        flex-direction: column; align-items: center; padding-top: 40px;
         transition: 0.4s;
     }
-
     #btn-menu:checked ~ .menu { left: 0; }
 
-    /* Apilado de secciones */
-    .hero-flex { flex-direction: column; text-align: center; }
-    .about-flex { flex-direction: column; text-align: center; }
-
-    /* Orden: David-1 abajo, David-2 arriba */
+    .hero-flex, .about-flex { flex-direction: column; text-align: center; }
+    
+    /* David-1 abajo, David-2 arriba */
     .hero-img { order: 2; }
     .hero-text { order: 1; }
     .about-img { order: 1; }
     .about-text { order: 2; }
 
-    .nombre { font-size: 1.7rem; }
-    .hero-img img, .about-img img { max-width: 250px; } /* Imagen más pequeña en móvil */
+    .img-david, .img-perfil { max-width: 280px; }
     .socials { justify-content: center; }
 }
