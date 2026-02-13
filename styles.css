@@ -169,37 +169,62 @@ html, body {
 }
 
 /* --- AJUSTE PARA MÓVIL (MUY IMPORTANTE) --- */
+/* --- UNIFICADO RESPONSIVE --- */
 @media (max-width: 768px) {
-    .nombre {
-        font-size: 1.6rem; /* Bajamos el tamaño para que quepa en el celular */
-        line-height: 1.3;
-    }
+    .icon-menu { display: flex; }
     
-    .hero-intro strong {
-        font-size: 1.4rem; /* Ajustamos también el "soy" */
-    }
-    
-    .hero-flex {
+    .menu {
+        position: fixed;
+        top: 70px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 70px);
+        background: rgba(40, 40, 40, 0.45); 
+        backdrop-filter: blur(10px) saturate(180%);
+        -webkit-backdrop-filter: blur(10px) saturate(180%);
         flex-direction: column;
-        text-align: center;
+        align-items: center;
+        justify-content: center;
+        transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        gap: 30px;
+        z-index: 999;
     }
-    
+
+    #btn-menu:checked ~ .menu { left: 0; }
+
+    /* ESTO ES LO QUE SUBE EL HERO */
     .hero {
-        /* 1. Reducimos el min-height para que no ocupe toda la pantalla y suba */
-        min-height: 70vh; 
-        
-        /* 2. Cambiamos el alineamiento de 'center' a 'flex-start' para que pegue arriba */
-        align-items: flex-start; 
-        
-        /* 3. Ajustamos el espacio superior para que no choque con el header */
-        padding-top: 40px; 
+        min-height: auto;    /* Deja de forzar que ocupe toda la pantalla */
+        align-items: flex-start; /* Pega el contenido al tope */
+        padding-top: 80px;   /* Solo el espacio necesario para no chocar con el header */
     }
 
     .container {
-        /* Reducimos el padding del contenedor para ganar espacio */
-        padding: 20px 20px;
+        padding: 10px 20px; /* Reduce espacios internos */
     }
 
+    .nombre {
+        font-size: 1.6rem;
+        line-height: 1.2;
+    }
+    
+    .hero-intro strong {
+        font-size: 1.4rem;
+    }
+    
+    .hero-flex, .about-flex { 
+        flex-direction: column; 
+        text-align: center; 
+        gap: 20px; /* Reduce el espacio entre texto e imagen */
+    }
+
+    .hero-img { order: 2; }
+    .hero-text { order: 1; }
+    .about-img { order: 1; }
+    .about-text { order: 2; }
+
+    .img-david, .img-perfil { max-width: 250px; }
+    .socials { justify-content: center; }
 }
 /* BOTÓN REFORZADO */
 .btn {
@@ -256,42 +281,3 @@ html, body {
 }
 .s-link img { width: 22px; height: 22px; object-fit: contain; }
 
-/* --- RESPONSIVE --- */
-@media (max-width: 768px) {
-    .icon-menu { display: flex; }
-    
-    .menu {
-        position: fixed;
-        top: 70px;
-        left: -100%;
-        width: 100%;
-        height: calc(100vh - 70px);
-        
-        /* Ajuste de Blur: Fondo más claro para que el desenfoque se note */
-        background: rgba(40, 40, 40, 0.45); 
-        backdrop-filter: blur(10px) saturate(180%); /* Saturar ayuda a que se note el blur en fondos oscuros */
-        -webkit-backdrop-filter: blur(10px) saturate(180%);
-        
-        flex-direction: column;
-        align-items: center;
-        justify-content: center; /* Centrado vertical para evitar desorden */
-        transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        gap: 30px;
-        z-index: 999;
-    }
-
-    #btn-menu:checked ~ .menu { left: 0; }
-.hero {
-        /* Esto empuja el contenido hacia abajo para que no choque con el logo */
-        padding-top: 50px; 
-}
-    .hero-flex, .about-flex { flex-direction: column; text-align: center; }
-
-    .hero-img { order: 2; }
-    .hero-text { order: 1; }
-    .about-img { order: 1; }
-    .about-text { order: 2; }
-
-    .img-david, .img-perfil { max-width: 280px; }
-    .socials { justify-content: center; }
-    }
