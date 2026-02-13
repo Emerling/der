@@ -28,17 +28,17 @@ body {
     position: fixed;
     top: 0;
     z-index: 1000;
-    
+
     /* Efecto de desenfoque también en la barra principal */
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    
+
     /* LA LÍNEA AZUL INFERIOR */
-    border-bottom: 2px solid var(--azul); 
-    
+    border-bottom: 2px solid var(--azul);
+
     /* Opcional: un ligero resplandor azul para que no se vea tan "plana" */
-    box-shadow: 0 4px 15px rgba(75, 136, 250, 0.2); 
-    
+    box-shadow: 0 4px 15px rgba(75, 136, 250, 0.2);
+
     display: flex;
     align-items: center;
 }
@@ -86,7 +86,7 @@ body {
 .menu a {
     color: var(--blanco);
     text-decoration: none;
-    font-family: 'Michroma', sans-serif;
+    font-family: "Michroma", sans-serif;
     position: relative; /* Necesario para posicionar la línea */
     padding-bottom: 5px;
     font-size: 1.1rem;
