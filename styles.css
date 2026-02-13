@@ -154,7 +154,32 @@ html, body {
     font-weight: bold;
     margin-top: 15px;
 }
+.btn {
+    background-color: var(--azul);
+    color: var(--blanco);
+    border: none;
+    padding: 12px 28px;
+    font-family: 'Syncopate', sans-serif;
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-top: 25px;
+    transition: all 0.3s ease;
+    /* Resplandor azul suave */
+    box-shadow: 0 4px 15px rgba(75, 136, 250, 0.3);
+}
 
+.btn:hover {
+    background-color: #3566cc; /* Un azul un poco más oscuro al pasar el dedo */
+    transform: translateY(-3px); /* Pequeño salto hacia arriba */
+    box-shadow: 0 6px 20px rgba(75, 136, 250, 0.5);
+}
+
+.btn:active {
+    transform: translateY(-1px);
+    }
 .hero-img, .about-img { flex: 1; text-align: center; }
 
 /* --- AJUSTE DE IMÁGENES --- */
