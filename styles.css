@@ -131,12 +131,9 @@ html, body {
     color: #888;
     text-transform: uppercase;
     letter-spacing: 2px;
-    
-    font-family: "Syncopate", sans-serif;
-    /* ... tus otros estilos ... */
+    /* Animación */
     animation: fadeInUp 0.8s ease-out forwards;
-    
-}
+    }
 
 .hero-intro strong {
     font-size: 1.8rem;
@@ -148,31 +145,34 @@ html, body {
 .hero-sub {
     margin-bottom: 10px;
     display: block;
+    animation-delay: 0.2s; /* Aparece un poco después */
+    opacity: 0;
 }
 
 .nombre {
     font-family: "Michroma", sans-serif;
     font-size: 2.8rem;
     margin: 15px 0;
-    margin-top: 10px; 
+    margin-top: 10px;
     
     background: linear-gradient(90deg, #3f37d4 0%, #3287d1 30%, #caecfc 50%, #0584fa 80%, #3f37d4 100%);
     background-size: 200% auto;
-    
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    
-    /* El drop-shadow es lo que da el efecto glow real */
     filter: drop-shadow(0 0 12px rgba(75, 136, 250, 0.6));
-    animation: shine 4s linear infinite;
-font-family: "Michroma", sans-serif
-    /* Agregamos fadeInUp antes de shine */
+
+    /* AMBAS ANIMACIONES AQUÍ (Separadas por coma) */
     animation: fadeInUp 0.8s ease-out forwards, shine 4s linear infinite;
     animation-delay: 0.4s;
     opacity: 0;
 }
-
+/* Descripción */
+.desc {
+    animation: fadeInUp 0.8s ease-out forwards;
+    animation-delay: 0.6s;
+    opacity: 0;
+}
 /* --- ANIMACIÓN --- */
 @keyframes shine {
     to { background-position: 200% center; }
