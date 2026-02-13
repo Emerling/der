@@ -135,7 +135,7 @@ html, body {
     -webkit-text-fill-color: transparent;
     
     /* EFECTO GLOW (Sutil pero presente) */
-    filter: drop-shadow(0 0 8px rgba(75, 136, 250, 0.5));
+    filter: drop-shadow(0 0 8px RGBA(5, 25, 250, 0.5));
     
     /* ANIMACIÓN */
     animation: shine 4s linear infinite;
