@@ -149,22 +149,31 @@ html, body {
 
 .nombre {
     font-family: "Michroma", sans-serif;
-    font-size: 2.8rem; /* Un poco más grande para el impacto */
+    font-size: 2.8rem;
     margin: 15px 0;
-    margin-top: 10px
+    margin-top: 10px; /* AQUÍ faltaba el punto y coma */
     
     /* EFECTO DEGRADADO */
-    background: linear-gradient(90deg,rgba(63, 55, 212, 1) 7%, rgba(50, 135, 209, 1) 22%, rgba(202, 236, 252, 1) 59%, rgba(5, 132, 250, 1) 100%);
+    /* Usamos un degradado más limpio para que no desaparezca en el medio */
+    background: linear-gradient(90deg, #3f37d4 0%, #3287d1 30%, #caecfc 50%, #0584fa 80%, #3f37d4 100%);
     background-size: 200% auto;
+    
+    /* IMPORTANTE: Estas líneas deben ir juntas sin errores arriba */
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     
     /* EFECTO GLOW (Sutil pero presente) */
-    filter: drop-shadow(0 0 8px rgba(75, 136, 250, 0.7));
+    filter: drop-shadow(0 0 12px rgba(75, 136, 250, 0.6));
     
     /* ANIMACIÓN */
     animation: shine 4s linear infinite;
 }
+
+/* No olvides esta animación al final de tu CSS */
+@keyframes shine {
+    to { background-position: 200% center; }
+    }
 
 .blue-text {
     color: var(--azul);
