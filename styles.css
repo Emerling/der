@@ -326,7 +326,7 @@ margin-bottom: 10px;
   color: var(--azul);
 }
 .about-text p {
-    margin-bottom: 10px; /* Añade un margen inferior a los párrafos */
+    margin-bottom: 15px; /* Añade un margen inferior a los párrafos */
     line-height: 1.5; /* Mejora la legibilidad del texto */
 }
 /* REDES SOCIALES */
