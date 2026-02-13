@@ -129,7 +129,7 @@ html, body {
     margin: 15px 0;
     
     /* EFECTO DEGRADADO */
-    background: linear-gradient(90deg, #4b88fa, #a2c2ff, #4b88fa);
+    background: linear-gradient(90deg,rgba(63, 55, 212, 1) 7%, rgba(50, 135, 209, 1) 22%, rgba(202, 236, 252, 1) 59%, rgba(5, 132, 250, 1) 100%);
     background-size: 200% auto;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
