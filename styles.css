@@ -461,6 +461,120 @@ body {
         0 10px 20px rgba(0, 0, 0, 0.3),
         0 0 15px rgba(75, 136, 250, 0.1);
 }
+/* --- SECCIÓN PROYECTOS --- */
+.proyectos {
+    padding: 100px 0;
+    background-color: var(--negro);
+}
+
+.proyectos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.proyecto-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(75, 136, 250, 0.1);
+    border-radius: 15px;
+    overflow: hidden; /* Para que la imagen no se salga de las esquinas redondeadas */
+    transition: all 0.4s ease;
+}
+
+.proyecto-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--azul);
+    box-shadow: 0 15px 35px rgba(75, 136, 250, 0.15);
+}
+
+.proyecto-img {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+}
+
+.proyecto-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.proyecto-card:hover .proyecto-img img {
+    transform: scale(1.1);
+}
+
+/* Capa que aparece sobre la imagen al hacer hover */
+.proyecto-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.proyecto-card:hover .proyecto-overlay {
+    opacity: 1;
+}
+
+.proyecto-info {
+    padding: 25px;
+}
+
+.proyecto-info h3 {
+    font-family: "Michroma", sans-serif;
+    color: var(--blanco);
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.proyecto-info p {
+    color: #888;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* Etiquetas de tecnologías */
+.proyecto-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.proyecto-tags span {
+    background: rgba(75, 136, 250, 0.1);
+    color: var(--azul);
+    border: 1px solid rgba(75, 136, 250, 0.3);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.btn-icon {
+    background: var(--azul);
+    color: var(--blanco);
+    padding: 8px 18px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 0.8rem;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.btn-icon:hover {
+    background: #3566cc;
+}
 
 .s-card:hover img {
     filter: grayscale(0%) opacity(1);
