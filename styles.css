@@ -461,6 +461,15 @@ body {
         0 10px 20px rgba(0, 0, 0, 0.3),
         0 0 15px rgba(75, 136, 250, 0.1);
 }
+/* 
+para que los iconos blancos/negros resalten */
+.s-card img[alt="AI Tools"] {
+    filter: invert(1) brightness(1.5) grayscale(100%) opacity(0.7);
+}
+
+.s-card:hover img[alt="AI Tools"] {
+    filter: invert(1) brightness(2) grayscale(0%) opacity(1);
+}
 /* --- SECCIÓN PROYECTOS --- */
 .proyectos {
     padding: 100px 0;
