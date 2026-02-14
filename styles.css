@@ -593,3 +593,9 @@ para que los iconos blancos/negros resalten */
 .s-card:hover span {
     color: var(--blanco);
 }
+/* Color especial para etiquetas de diseño si quieres que resalten */
+.proyecto-tags span:nth-child(odd) {
+    border-color: #ff00ff; /* Un toque magenta/fucsia para lo creativo */
+    color: #ff00ff;
+    background: rgba(255, 0, 255, 0.05);
+}
