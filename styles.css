@@ -727,3 +727,36 @@ para que los iconos blancos/negros resalten */
         justify-content: center;
     }
 }
+/* --- ESTILO ICONOS CONTACTO --- */
+.contact-icon {
+    width: 22px;
+    height: 22px;
+    color: #00d2ff; /* El color Cian Neón */
+    filter: drop-shadow(0 0 5px rgba(0, 210, 255, 0.6)); /* Efecto resplandor */
+    transition: all 0.3s ease;
+}
+
+.c-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+}
+
+.c-item:hover {
+    transform: translateX(10px); /* Se mueve un poco a la derecha al pasar el mouse */
+}
+
+.c-item:hover .contact-icon {
+    color: #ff00ff; /* Cambia a fucsia en el hover para ese toque "Cyber" */
+    filter: drop-shadow(0 0 8px rgba(255, 0, 255, 0.8));
+    transform: rotate(-10deg);
+}
+
+.c-item span {
+    font-family: "Michroma", sans-serif;
+    font-size: 0.85rem;
+    color: var(--blanco);
+    letter-spacing: 0.5px;
+}
