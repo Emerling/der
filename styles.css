@@ -372,3 +372,59 @@ margin-bottom: 10px;
         background-position: 200% center;
     }
 }
+/* --- SECCIÓN SKILLS --- */
+.skills {
+    background-color: var(--negro);
+    padding: 80px 0;
+}
+
+.skills-grid {
+    display: grid;
+    /* Crea columnas automáticas que se ajustan al tamaño de la pantalla */
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 25px;
+    margin-top: 40px;
+}
+
+.skill-card {
+    background: rgba(255, 255, 255, 0.03); /* Fondo casi invisible */
+    border: 1px solid rgba(75, 136, 250, 0.1);
+    border-radius: 12px;
+    padding: 30px 20px;
+    text-align: center;
+    transition: all 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.skill-card:hover {
+    background: rgba(75, 136, 250, 0.05);
+    border-color: var(--azul);
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(75, 136, 250, 0.2);
+}
+
+.skill-card img {
+    width: 50px;
+    height: 50px;
+    filter: grayscale(100%); /* Los iconos empiezan en gris */
+    transition: all 0.4s ease;
+}
+
+.skill-card:hover img {
+    filter: grayscale(0%); /* Toman color al pasar el mouse */
+    transform: scale(1.1);
+}
+
+.skill-card span {
+    font-family: "Michroma", sans-serif;
+    font-size: 0.8rem;
+    color: #888;
+    transition: color 0.4s;
+}
+
+.skill-card:hover span {
+    color: var(--blanco);
+}
