@@ -640,3 +640,90 @@ para que los iconos blancos/negros resalten */
     background: linear-gradient(45deg, var(--azul), #00d2ff);
     box-shadow: 0 0 15px rgba(0, 210, 255, 0.4);
 }
+/* --- FOOTER --- */
+.main-footer {
+    background: linear-gradient(180deg, var(--negro) 0%, #0a0a0a 100%);
+    padding: 80px 0 20px;
+    border-top: 1px solid rgba(75, 136, 250, 0.2);
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+}
+
+.footer-info p {
+    color: #888;
+    margin: 20px 0;
+    line-height: 1.6;
+}
+
+.contacto-links {
+    margin-bottom: 25px;
+}
+
+.c-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+    color: var(--blanco);
+    font-family: "Michroma", sans-serif;
+    font-size: 0.8rem;
+}
+
+.footer-form h3 {
+    font-family: "Michroma", sans-serif;
+    margin-bottom: 25px;
+}
+
+/* Estilo de los Inputs */
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group input, 
+.input-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(75, 136, 250, 0.2);
+    border-radius: 5px;
+    color: var(--blanco);
+    font-family: "Syncopate", sans-serif;
+    font-size: 0.8rem;
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+/* Efecto Focus: Brillo azul al escribir */
+.input-group input:focus, 
+.input-group textarea:focus {
+    border-color: var(--azul);
+    background: rgba(75, 136, 250, 0.05);
+    box-shadow: 0 0 15px rgba(75, 136, 250, 0.3);
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 60px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    color: #444;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Ajuste Móvil */
+@media (max-width: 768px) {
+    .footer-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    .c-item {
+        justify-content: center;
+    }
+}
