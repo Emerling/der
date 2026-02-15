@@ -496,20 +496,18 @@ para que los iconos blancos/negros resalten */
 }
 
 .proyecto-card {
-    position: relative; /* Necesario para posicionar el borde */
+    position: relative; 
     background: rgba(255, 255, 255, 0.03);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     border-radius: 15px;
     overflow: hidden;
     transition: all 0.4s ease;
-    /* Eliminamos el border sólido anterior para usar el animado */
+  
     border: none;
     z-index: 1;
 }
-
 /* El "borde" animado */
-/* El "borde" animado - AHORA SOLO AZULES */
 .proyecto-card::before {
     content: "";
     position: absolute;
@@ -702,7 +700,7 @@ para que los iconos blancos/negros resalten */
 
 /* --- FOOTER --- */
 .main-footer {
-    background: linear-gradient(180deg, var(--negro) 0%, #0a0a0a 100%);
+    background: linear-gradient(180deg, var(--negro) 0%, rgb(28,28,28) 100%);
     padding: 40px 0 20px;
     border-top: 1px solid rgba(75, 136, 250, 0.2);
 }
