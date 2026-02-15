@@ -697,6 +697,38 @@ para que los iconos blancos/negros resalten */
 }
 
 /* Animación de los tags de diseño para que brillen */
+
+/* Estilo para etiquetas de diseño */
+.card-diseno .proyecto-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.card-diseno .proyecto-tags span {
+    border-radius: 20px;
+    padding: 4px 12px;
+    font-size: 0.7rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* Azul para etiquetas en posiciones pares */
+.card-diseno .proyecto-tags span {
+    border: 1px solid #00d2ff; /* Azul */
+    color: #00d2ff; /* Azul */
+    background: rgba(0, 210, 255, 0.05); /* Azul claro */
+}
+
+/* Magenta para etiquetas en posiciones impares */
+.card-diseno .proyecto-tags span:nth-child(odd) {
+    border-color: #ff00ff; /* Magenta */
+    color: #ff00ff; /* Magenta */
+    background: rgba(255, 0, 255, 0.05); /* Magenta claro */
+}
+
+
+
 .card-diseno .proyecto-tags span {
     border-color: #00d2ff;
     color: #00d2ff;
