@@ -29,7 +29,7 @@ body {
     top: 0;
     left: 0;
     z-index: 1000;
-    border-bottom: 2px solid var(--azul);
+    border-bottom: 1px solid var(--azul);
     box-shadow: 0 4px 15px rgba(75, 136, 250, 0.15);
 }
 
@@ -496,14 +496,14 @@ para que los iconos blancos/negros resalten */
 }
 
 .proyecto-card {
-    position: relative; 
+    position: relative;
     background: rgba(255, 255, 255, 0.03);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     border-radius: 15px;
     overflow: hidden;
     transition: all 0.4s ease;
-  
+
     border: none;
     z-index: 1;
 }
@@ -700,7 +700,7 @@ para que los iconos blancos/negros resalten */
 
 /* --- FOOTER --- */
 .main-footer {
-    background: linear-gradient(180deg, var(--negro) 0%, rgb(28,28,28) 100%);
+    background: linear-gradient(180deg, var(--negro) 0%, rgb(28, 28, 28) 100%);
     padding: 40px 0 20px;
     border-top: 1px solid rgba(75, 136, 250, 0.2);
 }
@@ -737,7 +737,6 @@ para que los iconos blancos/negros resalten */
     margin-bottom: 25px;
 }
 
-/* Estilo de los Inputs */
 .input-group {
     margin-bottom: 15px;
 }
@@ -756,7 +755,7 @@ para que los iconos blancos/negros resalten */
     outline: none;
 }
 
-/* Efecto Focus: Brillo azul al escribir */
+/* Efecto Focus: Brillo azul al escribir*/
 .input-group input:focus,
 .input-group textarea:focus {
     border-color: var(--azul);
@@ -766,10 +765,10 @@ para que los iconos blancos/negros resalten */
 
 .footer-bottom {
     text-align: center;
-    margin-top: 60px;
+    margin-top: 40px;
     padding-top: 20px;
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
-    color: #444;
+    border-top: 1px solid #var(--azul);
+    color: #555;
     font-size: 0.7rem;
     text-transform: uppercase;
     letter-spacing: 2px;
