@@ -767,7 +767,7 @@ para que los iconos blancos/negros resalten */
     text-align: center;
     margin-top: 40px;
     padding-top: 20px;
-    border-top: 1px solid #var(--azul);
+    border-top: 1px solid var(--azul);
     color: #555;
     font-size: 0.7rem;
     text-transform: uppercase;
