@@ -703,7 +703,7 @@ para que los iconos blancos/negros resalten */
 /* --- FOOTER --- */
 .main-footer {
     background: linear-gradient(180deg, var(--negro) 0%, #0a0a0a 100%);
-    padding: 80px 0 20px;
+    padding: 40px 0 20px;
     border-top: 1px solid rgba(75, 136, 250, 0.2);
 }
 
