@@ -480,7 +480,7 @@ para que los iconos blancos/negros resalten */
 
 /* --- SECCIÓN PROYECTOS --- */
 .proyectos {
-    padding: 100px 0;
+    padding: 40px 0;
     background-color: var(--negro);
 }
 
@@ -488,7 +488,7 @@ para que los iconos blancos/negros resalten */
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 30px;
-    margin-top: 50px;
+    margin-top: 40px;
 }
 
 .proyecto-card {
