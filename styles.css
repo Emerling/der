@@ -505,6 +505,7 @@ para que los iconos blancos/negros resalten */
 }
 
 /* El "borde" animado */
+/* El "borde" animado - AHORA SOLO AZULES */
 .proyecto-card::before {
     content: '';
     position: absolute;
@@ -512,17 +513,18 @@ para que los iconos blancos/negros resalten */
     left: -50%;
     width: 200%;
     height: 200%;
-    /* El degradado con tus colores (Azul y fucsia/cian) */
+    /* Eliminamos el verde, usamos azul puro y azul cian brillante */
     background: conic-gradient(
         transparent, 
         var(--azul), 
         transparent, 
-        #00d2ff, 
+        #007cf0, /* Azul intermedio */
+        transparent,
+        #00d2ff, /* Azul cian puro (sin verde) */
         transparent
     );
     animation: rotateBorder 4s linear infinite;
     z-index: -2;
-    /* Solo se activa en Hover */
     opacity: 0;
     transition: opacity 0.5s ease;
 }
@@ -547,6 +549,7 @@ para que los iconos blancos/negros resalten */
 /* ACTIVACIÓN EN HOVER */
 .proyecto-card:hover {
     transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 0 20px rgba(75, 136, 250, 0.3); /* Resplandor azul */
 }
 
 .proyecto-card:hover::before {
