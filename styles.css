@@ -375,14 +375,14 @@ body {
 /* SECCIÓN SKILLS CATEGORIZADA */
 .skills {
     background-color: var(--negro);
-    padding: 40px 0;
+    padding: 40px 0 20px;
 }
 
 .skills-wrapper {
     display: flex;
     flex-direction: column;
-    gap: 40px; /* Espacio entre categorías */
-    margin-top: 40px;
+    gap: 40px; 
+    margin-top: 30px;
 }
 
 .skill-group {
@@ -480,7 +480,7 @@ para que los iconos blancos/negros resalten */
 
 /* --- SECCIÓN PROYECTOS --- */
 .proyectos {
-    padding: 40px 0;
+    padding: 20px 0.40px;
     background-color: var(--negro);
 }
 
@@ -488,34 +488,104 @@ para que los iconos blancos/negros resalten */
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 30px;
-    margin-top: 40px;
+    margin-top: 20px;
 }
 
 .proyecto-card {
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(75, 136, 250, 0.1);
+    position: relative; /* Necesario para posicionar el borde */
+    background: rgba(255, 255, 255, 0.03); 
+    backdrop-filter: blur(10px); 
+    -webkit-backdrop-filter: blur(10px);
     border-radius: 15px;
-    overflow: hidden; /* Para que la imagen no se salga de las esquinas redondeadas */
+    overflow: hidden;
     transition: all 0.4s ease;
+    /* Eliminamos el border sólido anterior para usar el animado */
+    border: none; 
+    z-index: 1;
 }
 
+/* El "borde" animado */
+.proyecto-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    /* El degradado con tus colores (Azul y fucsia/cian) */
+    background: conic-gradient(
+        transparent, 
+        var(--azul), 
+        transparent, 
+        #00d2ff, 
+        transparent
+    );
+    animation: rotateBorder 4s linear infinite;
+    z-index: -2;
+    /* Solo se activa en Hover */
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+/* La capa interna para que el contenido no se tape */
+.proyecto-card::after {
+    content: '';
+    position: absolute;
+    inset: 2px; /* Grosor del borde (2px) */
+    background: rgba(10, 10, 10, 0.95); /* Fondo oscuro interno */
+    border-radius: 13px;
+    z-index: -1;
+    backdrop-filter: blur(10px);
+}
+
+/* Animación de rotación */
+@keyframes rotateBorder {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* ACTIVACIÓN EN HOVER */
 .proyecto-card:hover {
-    transform: translateY(-10px);
-    border-color: var(--azul);
-    box-shadow: 0 15px 35px rgba(75, 136, 250, 0.15);
+    transform: translateY(-10px) scale(1.02);
+}
+
+.proyecto-card:hover::before {
+    opacity: 1; /* El borde aparece al pasar el mouse */
 }
 
 .proyecto-img {
     position: relative;
     height: 200px;
     overflow: hidden;
+    /* EL TRUCO: Un margen de 2px para que se vea el borde animado */
+    margin: 2px; 
+    border-radius: 13px 13px 0 0; /* Redondeamos las esquinas superiores */
+    z-index: 2; /* Aseguramos que el contenido esté bien posicionado */
 }
+
 
 .proyecto-img img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.5s ease;
+    /* Tu zoom discreto que ya configuramos */
+    transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Re-aseguramos que la tarjeta oculte lo que se salga */
+.proyecto-card {
+    position: relative;
+    background: rgba(10, 10, 10, 0.9); 
+    border-radius: 15px;
+    overflow: hidden; /* Esto es vital */
+    border: none;
+    z-index: 1;
+}
+
+
+.proyecto-card:hover::after {
+    background: rgba(10, 10, 10, 0.8); /* Se vuelve un poco más transparente en hover */
+}
 }
 
 .proyecto-card:hover .proyecto-img img {
@@ -544,6 +614,8 @@ para que los iconos blancos/negros resalten */
 
 .proyecto-info {
     padding: 25px;
+    /* Un degradado muy suave para asegurar legibilidad */
+    background: linear-gradient(180deg, transparent, rgba(0,0,0,0.2));
 }
 
 .proyecto-info h3 {
