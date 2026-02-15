@@ -113,7 +113,11 @@ body {
 }
 
 .about {
-    background: linear-gradient(180deg, var(--negro) 0%, rgba(255, 255, 255, 0.1) 100%);
+    background: linear-gradient(
+        180deg,
+        var(--negro) 0%,
+        rgba(255, 255, 255, 0.1) 100%
+    );
     min-height: 100vh;
     display: flex;
     align-items: center;
@@ -381,7 +385,7 @@ body {
 .skills-wrapper {
     display: flex;
     flex-direction: column;
-    gap: 40px; 
+    gap: 40px;
     margin-top: 30px;
 }
 
@@ -480,7 +484,7 @@ para que los iconos blancos/negros resalten */
 
 /* --- SECCIÓN PROYECTOS --- */
 .proyectos {
-    padding: 20px 0.40px;
+    padding: 20px 0.4px;
     background-color: var(--negro);
 }
 
@@ -493,21 +497,21 @@ para que los iconos blancos/negros resalten */
 
 .proyecto-card {
     position: relative; /* Necesario para posicionar el borde */
-    background: rgba(255, 255, 255, 0.03); 
-    backdrop-filter: blur(10px); 
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     border-radius: 15px;
     overflow: hidden;
     transition: all 0.4s ease;
     /* Eliminamos el border sólido anterior para usar el animado */
-    border: none; 
+    border: none;
     z-index: 1;
 }
 
 /* El "borde" animado */
 /* El "borde" animado - AHORA SOLO AZULES */
 .proyecto-card::before {
-    content: '';
+    content: "";
     position: absolute;
     top: -50%;
     left: -50%;
@@ -515,13 +519,13 @@ para que los iconos blancos/negros resalten */
     height: 200%;
     /* Eliminamos el verde, usamos azul puro y azul cian brillante */
     background: conic-gradient(
-        transparent, 
-        var(--azul), 
-        transparent, 
-        #007cf0, /* Azul intermedio */
         transparent,
-        #00d2ff, /* Azul cian puro (sin verde) */
-        transparent
+        var(--azul),
+        transparent,
+        #007cf0,
+        /* Azul intermedio */ transparent,
+        #00d2ff,
+        /* Azul cian puro (sin verde) */ transparent
     );
     animation: rotateBorder 4s linear infinite;
     z-index: -2;
@@ -531,7 +535,7 @@ para que los iconos blancos/negros resalten */
 
 /* La capa interna para que el contenido no se tape */
 .proyecto-card::after {
-    content: '';
+    content: "";
     position: absolute;
     inset: 2px; /* Grosor del borde (2px) */
     background: rgba(10, 10, 10, 0.95); /* Fondo oscuro interno */
@@ -542,8 +546,12 @@ para que los iconos blancos/negros resalten */
 
 /* Animación de rotación */
 @keyframes rotateBorder {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 /* ACTIVACIÓN EN HOVER */
@@ -561,7 +569,7 @@ para que los iconos blancos/negros resalten */
     height: 200px;
     overflow: hidden;
     /* EL TRUCO: Un margen de 2px para que se vea el borde animado */
-    margin: 2px; 
+    margin: 2px;
     border-radius: 13px 13px 0 0; /* Redondeamos las esquinas superiores */
     z-index: 2; /* Aseguramos que el contenido esté bien posicionado */
 }
@@ -575,16 +583,20 @@ para que los iconos blancos/negros resalten */
 /* Re-aseguramos que la tarjeta oculte lo que se salga */
 .proyecto-card {
     position: relative;
-    background: rgba(10, 10, 10, 0.9); 
+    background: rgba(10, 10, 10, 0.9);
     border-radius: 15px;
     overflow: hidden; /* Esto es vital */
     border: none;
     z-index: 1;
 }
 
-
 .proyecto-card:hover::after {
-    background: rgba(10, 10, 10, 0.8); /* Se vuelve un poco más transparente en hover */
+    background: rgba(
+        10,
+        10,
+        10,
+        0.8
+    ); /* Se vuelve un poco más transparente en hover */
 }
 
 .proyecto-card:hover .proyecto-img img {
@@ -614,7 +626,7 @@ para que los iconos blancos/negros resalten */
 .proyecto-info {
     padding: 25px;
     /* Un degradado muy suave para asegurar legibilidad */
-    background: linear-gradient(180deg, transparent, rgba(0,0,0,0.2));
+    background: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.2));
 }
 
 .proyecto-info h3 {
@@ -722,7 +734,7 @@ para que los iconos blancos/negros resalten */
     margin-bottom: 15px;
 }
 
-.input-group input, 
+.input-group input,
 .input-group textarea {
     width: 100%;
     padding: 12px 15px;
@@ -737,7 +749,7 @@ para que los iconos blancos/negros resalten */
 }
 
 /* Efecto Focus: Brillo azul al escribir */
-.input-group input:focus, 
+.input-group input:focus,
 .input-group textarea:focus {
     border-color: var(--azul);
     background: rgba(75, 136, 250, 0.05);
@@ -783,7 +795,9 @@ para que los iconos blancos/negros resalten */
 }
 
 .c-item:hover {
-    transform: translateX(10px); /* Se mueve un poco a la derecha al pasar el mouse */
+    transform: translateX(
+        10px
+    ); /* Se mueve un poco a la derecha al pasar el mouse */
 }
 
 .c-item:hover .contact-icon {
