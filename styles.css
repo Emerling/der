@@ -586,7 +586,6 @@ para que los iconos blancos/negros resalten */
 .proyecto-card:hover::after {
     background: rgba(10, 10, 10, 0.8); /* Se vuelve un poco más transparente en hover */
 }
-}
 
 .proyecto-card:hover .proyecto-img img {
     transform: scale(1.1);
