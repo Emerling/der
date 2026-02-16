@@ -1,29 +1,29 @@
-<svg width="400" height="200" viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
+<svg width="200" height="100" viewBox="0 0 200 100" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <style type="text/css">
       @import url('https://fonts.googleapis.com/css2?family=Michroma&amp;display=swap');
-
-      .michroma-text {
+      
+      .logo-text {
         font-family: 'Michroma', sans-serif;
-        font-size: 48px;
+        font-size: 40px;
         fill: #4b88fa;
-        /* Engrosamos la letra con un borde sutil del mismo color */
+        /* Esto le da el grosor extra que pediste sin deformar */
         stroke: #4b88fa;
-        stroke-width: 1.5;
-        paint-order: stroke;
+        stroke-width: 0.8;
       }
-
-      .zigzag-line {
+      
+      .zigzag {
+        fill: none;
         stroke: #ff00ff;
         stroke-width: 2;
         stroke-linecap: round;
         stroke-linejoin: round;
-        fill: none;
       }
     </style>
   </defs>
-  <g transform="translate(200, 100)">
-    <text x="0" y="15" text-anchor="middle" class="michroma-text">{der;}</text>
-    <path d="M -42,32 L -36,28 L -30,32 L -24,28 L -18,32 L -12,28 L -6,32 L 0,28 L 6,32 L 12,28 L 18,32 L 24,28 L 30,32 L 36,28 L 42,32" class="zigzag-line" />
-  </g>
+
+  <text x="10" y="60" class="logo-text">{der;}</text>
+  
+  <path d="M 38,72 L 44,67 L 50,72 L 56,67 L 62,72 L 68,67 L 74,72 L 80,67 L 86,72 L 92,67 L 98,72 L 104,67 L 110,72" 
+        class="zigzag" />
 </svg>
