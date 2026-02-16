@@ -58,11 +58,11 @@ body {
 .logo-container {
   display: flex;
   align-items: center; /* Centra verticalmente */
-  height: 100px; /* Dale la altura fija que quieres que ocupe en el header */
+  height:80px; /* Dale la altura fija que quieres que ocupe en el header */
 }
 
 .logo-svg {
-  height: 100%; /* Que ocupe el alto del contenedor */
+  height: 90%; /* Que ocupe el alto del contenedor */
   width: auto;  /* Que mantenga la proporción sin estirarse */
 }
 
