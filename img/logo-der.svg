@@ -1,4 +1,4 @@
-<svg  viewBox="0 0 160 80 xmlns="http://www.w3.org/2000/svg">
+<svg width="400" height="200" viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <style type="text/css">
       @import url('https://fonts.googleapis.com/css2?family=Michroma&amp;display=swap');
@@ -9,13 +9,13 @@
         fill: #4b88fa;
         /* Engrosamos la letra con un borde sutil del mismo color */
         stroke: #4b88fa;
-        stroke-width: 1.5;
+        stroke-width: 1.2;
         paint-order: stroke;
       }
       
       .zigzag-line {
         stroke: #ff00ff;
-        stroke-width: 2;
+        stroke-width: 1.5;
         stroke-linecap: round;
         stroke-linejoin: round;
         fill: none;
