@@ -43,12 +43,19 @@ body {
   padding: 0 20px;
 }
 
-.logo {
+ .logo {
   font-family: "Michroma", sans-serif;
   color: var(--azul);
-  font-size: 1.7rem;
+  font-size: 2rem;
   text-shadow: 0px 0px 4px rgba(75, 136, 250, 0.5);
+  text-decoration: underline;
+  text-decoration-style: wavy; /* Mantener estilo zigzag */
+  text-decoration-color: magenta; /* Cambiar a magenta */
+  text-decoration-thickness: 1.5px; /* Ajustar el grosor */
+  padding-bottom: 10px; /* Espacio entre el texto y el subrayado */
 }
+
+
 
 #btn-menu {
   display: none;
