@@ -43,18 +43,28 @@ body {
   padding: 0 20px;
 }
 
- .logo {
+ /* .logo {
   font-family: "Michroma", sans-serif;
   color: var(--azul);
   font-size: 2rem;
   text-shadow: 0px 0px 4px rgba(75, 136, 250, 0.5);
   text-decoration: underline;
-  text-decoration-style: wavy; /* Mantener estilo zigzag */
-  text-decoration-color: magenta; /* Cambiar a magenta */
-  text-decoration-thickness: 1.5px; /* Ajustar el grosor */
-  padding-bottom: 10px; /* Espacio entre el texto y el subrayado */
+  text-decoration-style: wavy; Mantener estilo zigzag
+  text-decoration-color: magenta; Cambiar a magenta
+  text-decoration-thickness: 1.5px; Ajustar el grosor
+  padding-bottom: 10px; Espacio entre el texto y el subrayado
+ } */
+
+.logo-container {
+  display: flex;
+  align-items: center; /* Centra verticalmente */
+  height: 100px; /* Dale la altura fija que quieres que ocupe en el header */
 }
 
+.logo-svg {
+  height: 100%; /* Que ocupe el alto del contenedor */
+  width: auto;  /* Que mantenga la proporción sin estirarse */
+}
 
 
 #btn-menu {
