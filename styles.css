@@ -2,7 +2,7 @@
   --azul: #4b88fa;
   --negro: #000000;
   --blanco: #F0EEE9;
-  --gris: #333333;
+  --gris: #444444;
 }
 
 * {
@@ -46,8 +46,8 @@ body {
 .logo {
   font-family: "Michroma", sans-serif;
   color: var(--azul);
-  font-size: 1.5rem;
-  text-shadow: 0 0 20px rgba(75, 136, 250, 0.5);
+  font-size: 1.7rem;
+  text-shadow: 0px 0px 4px rgba(75, 136, 250, 0.5);
 }
 
 #btn-menu {
