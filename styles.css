@@ -359,6 +359,16 @@ body {
     left: 0;
 }
 
+/* Seleccionamos específicamente el enlace que contiene el logo de WhatsApp */
+.s-link img[alt*="WhatsApp"], 
+.s-link img[src*="whatsapp"] {
+    width: 50%;      /* Lo hacemos un poco más pequeño que el 100% */
+    height: 50%;     /* Mantenemos la proporción */
+    top: 50%;        /* Lo movemos al centro exacto */
+    left: 50%;
+    transform: translate(-50%, -50%); /* Truco matemático para centrado perfecto */
+    object-fit: contain; /* Asegura que no se deforme */
+}
 /* Animaciones */
 @keyframes fadeInUp {
     from {
