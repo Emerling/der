@@ -9,13 +9,13 @@
         fill: #4b88fa;
         /* Engrosamos la letra con un borde sutil del mismo color */
         stroke: #4b88fa;
-        stroke-width: 1.2;
+        stroke-width: 1.5;
         paint-order: stroke;
       }
       
       .zigzag-line {
         stroke: #ff00ff;
-        stroke-width: 1.2;
+        stroke-width: 2;
         stroke-linecap: round;
         stroke-linejoin: round;
         fill: none;
