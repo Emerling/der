@@ -370,6 +370,17 @@ body {
     left: 50% !important;
     transform: translate(-50%, -50%) !important;
 }
+.s-link img[alt*="Teléfono"], 
+.s-link img[src*="telefono"] {
+    width: 75% !important;   /* El !important asegura que gane a la regla del 100% */
+    height: 75% !important;
+    object-fit: contain !important;
+    /* Centrado absoluto */
+    position: absolute;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+}
 /* IMPORTANTE: Asegúrate de que el contenedor no corte la punta */
 .s-link {
     overflow: visible !important; /* Esto permitirá que la 'colita' se vea si llega al borde */
