@@ -726,9 +726,9 @@ para que los iconos blancos/negros resalten */
 
 /* --- FOOTER --- */
 .main-footer {
-    background: linear-gradient(180deg, var(--negro) 0%, rgb(28, 28, 28) 100%);
+    background: linear-gradient(180deg, var(--negro) 0%, rgb(38, 38, 38) 100%);
     padding: 40px 0 20px;
-    border-top: 1px solid rgba(75, 136, 250, 0.2);
+    border-top: 1px solid rgba(75, 136, 250, 0.8);
 }
 
 .footer-grid {
@@ -800,7 +800,6 @@ para que los iconos blancos/negros resalten */
     letter-spacing: 2px;
 }
 
-/* Ajuste Móvil */
 @media (max-width: 768px) {
     .footer-grid {
         grid-template-columns: 1fr;
