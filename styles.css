@@ -803,11 +803,13 @@ para que los iconos blancos/negros resalten */
 }
 
 .footer-form h3 {
+  color: var(--azul);
   font-family: "Michroma", sans-serif;
   margin-bottom: 25px;
 }
 
 .input-group {
+
   margin-bottom: 15px;
 }
 
