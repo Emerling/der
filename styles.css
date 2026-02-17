@@ -573,7 +573,7 @@ para que los iconos blancos/negros resalten */
   transparent,
   var(--azul),
   transparent,
-  #007cf0,
+  var(--azul),
   /* Azul intermedio */ transparent,
   #00d2ff,
   /* Azul cian puro (sin verde) */ transparent
