@@ -770,9 +770,15 @@ para que los iconos blancos/negros resalten */
   gap: 60px;
   align-items: start;
 }
-.logo-svg {
+.f
+logo2-svg{
     width: 30vw;  /* Tomará el 30% del ancho de la ventana del navegador */
     height: auto; /* Mantiene la proporción */
+    display: block;      /* Necesario para que los márgenes funcionen */
+    margin-left: auto;  /* Margen izquierdo automático */
+    margin-right: auto; /* Margen derecho automático */
+    width: 50%;         /* O el tamaño que desees */
+    height: auto;
 }
 
 
