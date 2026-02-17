@@ -763,7 +763,8 @@ para que los iconos blancos/negros resalten */
 
 /* --- FOOTER --- */
 .main-footer {
-  background: linear-gradient(180deg, var(--negro) 0%, rgb(38, 38, 38) 100%);
+ /* background: linear-gradient(180deg, var(--negro) 0%, rgb(38, 38, 38) 100%);*/
+ background: var(--blanco);
   padding: 20px 0 20px;
   border-top: 1px solid rgba(75, 136, 250, 0.8);
 }
@@ -782,7 +783,7 @@ para que los iconos blancos/negros resalten */
 }
 
 .footer-info p {
-  color: #888;
+  color: #636363;
   margin: 20px 0;
   line-height: 1.6;
 }
@@ -796,7 +797,7 @@ para que los iconos blancos/negros resalten */
   align-items: center;
   gap: 10px;
   margin-bottom: 10px;
-  color: var(--blanco);
+  color: var(--negro);
   font-family: "Michroma", sans-serif;
   font-size: 0.8rem;
 }
@@ -817,7 +818,7 @@ para que los iconos blancos/negros resalten */
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(75, 136, 250, 0.2);
   border-radius: 5px;
-  color: var(--blanco);
+  color: var(--negro);
   font-family: "Syncopate", sans-serif;
   font-size: 0.8rem;
   transition: all 0.3s ease;
@@ -837,7 +838,7 @@ para que los iconos blancos/negros resalten */
   margin-top: 40px;
   padding-top: 20px;
   border-top: 1px solid var(--azul);
-  color: #888;
+  color: #636363;
   font-size: 0.7rem;
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -887,6 +888,6 @@ para que los iconos blancos/negros resalten */
 .c-item span {
   font-family: "Michroma", sans-serif;
   font-size: 0.85rem;
-  color: var(--blanco);
+  color: var(--negro);
   letter-spacing: 0.5px;
 }
