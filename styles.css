@@ -770,6 +770,12 @@ para que los iconos blancos/negros resalten */
   gap: 60px;
   align-items: start;
 }
+.logo-svg {
+    width: 30vw;  /* Tomará el 30% del ancho de la ventana del navegador */
+    height: auto; /* Mantiene la proporción */
+}
+
+
 
 .footer-info p {
   color: #888;
