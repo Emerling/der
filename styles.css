@@ -237,11 +237,13 @@ body {
     -webkit-backdrop-filter: blur(10px) saturate(180%);
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start; /* Cambiado a flex-start */
     transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     gap: 30px;
     z-index: 999;
-  }
+    padding-top: 50px; /* Ajusta este valor según sea necesario */
+}
+
 
   #btn-menu:checked ~ .menu {
     left: 0;
