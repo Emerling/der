@@ -568,7 +568,7 @@ para que los iconos blancos/negros resalten */
   left: -50%;
   width: 200%;
   height: 200%;
-  /* Eliminamos el verde, usamos azul puro y azul cian brillante */
+  
   background: conic-gradient(
   transparent,
   var(--azul),
