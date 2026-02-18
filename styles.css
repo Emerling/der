@@ -51,8 +51,8 @@ body {
 }
 
 .logo-svg {
-  margin-top: 40px;
-  height: 100%;
+  margin-top: 10px;
+  height: 50%;
   width: auto;
 }
 
@@ -758,7 +758,7 @@ para que los iconos blancos/negros resalten */
 
 .footer-info p {
   color: #cbcbcb;
-  margin: 0px 0px 25px 0px;
+  margin: 10px 0px 25px 0px;
   line-height: 1.6;
 }
 
