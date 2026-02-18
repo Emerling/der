@@ -698,8 +698,6 @@ para que los iconos blancos/negros resalten */
   font-weight: bold;
   text-transform: uppercase;
 }
-/* Esto aplica a TODAS las tarjetas por igual */
-
 /* 1. Color base para todos los tags (Azul/Par) */
 .proyecto-tags span {
   background: rgba(75, 136, 250, 0.1);
