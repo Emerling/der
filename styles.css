@@ -365,17 +365,28 @@ body {
   left: 0;
 }
 /* Forzamos el tamaño del icono de WhatsApp dentro de su círculo */
+/* Forzamos el tamaño del icono de WhatsApp */
 .s-link img[alt*="WhatsApp"],
-.s-link img[src*="whatsapp"] {
+.s-link img[src*="whatsapp"],
+.s-link img[alt*="Teléfono"],
+.s-link img[src*="telefono"] {
   width: 65% !important;
-  /* El !important asegura que gane a la regla del 100% */
   height: 65% !important;
   object-fit: contain !important;
-  /* Centrado absoluto */
+  /* Centrado sin transform para evitar parpadeo */
   position: absolute;
-  top: 50% !important;
-  left: 50% !important;
-  transform: translate(-50%, -50%) !important;
+  top: 0; left: 0; right: 0; bottom: 0;
+  margin: auto !important; 
+  /* Estabilizador de imagen */
+  backface-visibility: hidden;
+  -webkit-font-smoothing: subpixel-antialiased;
+}
+
+/* Ajuste específico para el tamaño del teléfono si lo quieres más grande */
+.s-link img[alt*="Teléfono"],
+.s-link img[src*="telefono"] {
+  width: 75% !important;
+  height: 75% !important;
 }
 .s-link img[alt*="Teléfono"],
 .s-link img[src*="telefono"] {
