@@ -750,7 +750,7 @@ para que los iconos blancos/negros resalten */
   align-items: start;
 }
 .logo2-svg {
-  width: 30vw;
+  width: 20vw;
   /* Tomará el 30% del ancho de la ventana del navegador */
   height: auto;
   /* Mantiene la proporción */
