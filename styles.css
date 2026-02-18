@@ -279,13 +279,12 @@ body {
   .img-perfil {
     max-width: 250px;
   }
-  /*.socials {
-    justify-content: center;
-  }*/
+
   .socials {
   display: flex;
   gap: 15px;
   margin-top: 25px;
+  justify-content: center;
 }
 }
 /* BOTÓN REFORZADO */
