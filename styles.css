@@ -343,74 +343,95 @@ body {
   margin-bottom: 15px;
   line-height: 1.5;
 }
-/* REDES SOCIALES */
+/* --- AJUSTE DE IMÁGENES --- */
+.img-david,
+.img-perfil {
+  max-width: 400px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.img-david { width: 180px; }
+.img-perfil { width: 220px; }
+
+.titulo-sec {
+  margin-top: 15px;
+  margin-bottom: 10px;
+  color: var(--azul);
+}
+
+.about-text p {
+  margin-bottom: 15px;
+  line-height: 1.5;
+}
+
+/* --- SECCIÓN REDES SOCIALES (CORREGIDA) --- */
 .socials {
   display: flex;
   gap: 15px;
   margin-top: 25px;
 }
+
 .s-link {
   width: 45px;
   height: 45px;
   border: 3px solid var(--azul);
   border-radius: 50%;
-  display: flex;
+  display: flex;            /* Centrado Flexbox: el más estable */
   align-items: center;
   justify-content: center;
   position: relative;
   overflow: hidden;
   background: transparent;
   transition: all 0.3s ease;
-  /* Estabilizador para evitar parpadeo */
+  /* Estabilizadores de imagen */
   transform: translateZ(0);
   backface-visibility: hidden;
 }
 
-/* Regla general para iconos normales (X, Git, TG) */
+/* Iconos estándar (Twitter, GitHub, Telegram) */
 .s-link img {
-  width: 101%; /* Evita bordes blancos por subpíxeles */
-  height: 101%;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  transition: transform 0.3s ease;
-}
-/* --- ESTILO ESPECÍFICO PARA WHATSAPP / TELÉFONO --- */
-.s-link.s-contact {
-  overflow: visible; /* Para que la colita del icono no se corte */
-  background: #000; /* Fondo base para resaltar el magenta */
-  border-color: #ff00ff; /* Color magenta opcional o mantén azul */
+  display: block;
 }
 
+/* --- ESTILO PARA WHATSAPP / TELÉFONO (Sin parpadeo) --- */
+.s-link.s-contact {
+  overflow: visible; 
+  background: #000; 
+  border-color: #ff00ff; /* Color magenta */
+}
+
+/* Quitamos los absolute y transforms que causan saltos */
 .s-link.s-contact img {
-  /* EL SECRETO: Centrado sin absolute ni top:50% */
-  position: relative !important;
-  top: auto !important;
-  left: auto !important;
+  position: static !important; 
   transform: none !important;
   object-fit: contain !important;
 }
 
-/* Tamaños controlados sin desbordar */
 .s-link.s-contact img[alt*="WhatsApp"] {
   width: 65% !important;
   height: 65% !important;
 }
 
 .s-link.s-contact img[alt*="Teléfono"] {
-  width: 75% !important;
-  height: 75% !important;
+  width: 70% !important;
+  height: 70% !important;
 }
 
-/* Hover suave para todos */
+/* Efectos Hover */
 .s-link:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 5px 15px rgba(75, 136, 250, 0.3);
+  transform: translateY(-4px);
+  box-shadow: 0 5px 15px rgba(75, 136, 250, 0.4);
 }
 
 .s-link.s-contact:hover {
   border-color: #ff00ff;
-  box-shadow: 0 5px 15px rgba(255, 0, 255, 0.3);
+  box-shadow: 0 5px 15px rgba(255, 0, 255, 0.4);
 }
-
 /* --- FIN REDES SOCIALES --- */
 
 
