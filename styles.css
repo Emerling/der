@@ -395,6 +395,23 @@ body {
   height: 65% !important;
 }
 
+.s-link.s-contact img[alt*="Teléfono"] {
+  width: 75% !important;
+  height: 75% !important;
+}
+
+/* Hover suave para todos */
+.s-link:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(75, 136, 250, 0.3);
+}
+
+.s-link.s-contact:hover {
+  border-color: #ff00ff;
+  box-shadow: 0 5px 15px rgba(255, 0, 255, 0.3);
+}
+
+/* --- FIN REDES SOCIALES --- */
 
 
 
