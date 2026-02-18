@@ -279,9 +279,14 @@ body {
   .img-perfil {
     max-width: 250px;
   }
-  .socials {
+  /*.socials {
     justify-content: center;
-  }
+  }*/
+  .socials {
+  display: flex;
+  gap: 15px;
+  margin-top: 25px;
+}
 }
 /* BOTÓN REFORZADO */
 .btn {
@@ -352,47 +357,47 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
   position: relative;
+  overflow: hidden;
+  background: transparent;
+  transition: all 0.3s ease;
+  /* Estabilizador para evitar parpadeo */
+  transform: translateZ(0);
+  backface-visibility: hidden;
 }
 
+/* Regla general para iconos normales (X, Git, TG) */
 .s-link img {
-  width: 100%;
-  height: 100%;
+  width: 101%; /* Evita bordes blancos por subpíxeles */
+  height: 101%;
   object-fit: cover;
-  position: absolute;
-  top: 0;
-  left: 0;
+  transition: transform 0.3s ease;
 }
-/* Forzamos el tamaño del icono de WhatsApp dentro de su círculo */
-.s-link img[alt*="WhatsApp"],
-.s-link img[src*="whatsapp"] {
+/* --- ESTILO ESPECÍFICO PARA WHATSAPP / TELÉFONO --- */
+.s-link.s-contact {
+  overflow: visible; /* Para que la colita del icono no se corte */
+  background: #000; /* Fondo base para resaltar el magenta */
+  border-color: #ff00ff; /* Color magenta opcional o mantén azul */
+}
+
+.s-link.s-contact img {
+  /* EL SECRETO: Centrado sin absolute ni top:50% */
+  position: relative !important;
+  top: auto !important;
+  left: auto !important;
+  transform: none !important;
+  object-fit: contain !important;
+}
+
+/* Tamaños controlados sin desbordar */
+.s-link.s-contact img[alt*="WhatsApp"] {
   width: 65% !important;
-  /* El !important asegura que gane a la regla del 100% */
   height: 65% !important;
-  object-fit: contain !important;
-  /* Centrado absoluto */
-  position: absolute;
-  top: 50% !important;
-  left: 50% !important;
-  transform: translate(-50%, -50%) !important;
 }
-.s-link img[alt*="Teléfono"],
-.s-link img[src*="telefono"] {
-  width: 75% !important;
-  height: 75% !important;
-  object-fit: contain !important;
-  /* Centrado absoluto */
-  position: absolute;
-  top: 50% !important;
-  left: 50% !important;
-  transform: translate(-50%, -50%) !important;
-}
-/* IMPORTANTE: Asegúrate de que el contenedor no corte la punta */
-.s-link {
-  overflow: visible !important;
-  /* Esto permitirá que la 'colita' se vea si llega al borde */
-}
+
+
+
+
 /* Animaciones */
 @keyframes fadeInUp {
   from {
