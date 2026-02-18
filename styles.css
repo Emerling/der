@@ -396,7 +396,16 @@ body {
 
 /* 4. Estabilizar la card globalmente */
 .s-card {
-  /* ... tus otras reglas ... */
+  background: rgba(10, 10, 10, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 20px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  cursor: default;
   /* Forzamos a la tarjeta a usar aceleración de hardware de forma constante */
   transform: translateZ(0);
   will-change: transform, border-color;
@@ -405,6 +414,8 @@ body {
 /* 5. Si usas filtros en el hover, aplícalos solo a la imagen, 
    pero asegúrate de que tengan un estado inicial definido */
 .s-card img {
+  width: 35px;
+  height: 35px;
   filter: grayscale(100%) opacity(0.7) blur(0);
   transition: filter 0.3s ease, transform 0.3s ease;
 }
@@ -483,25 +494,7 @@ body {
   gap: 15px;
 }
 
-.s-card {
-  background: rgba(10, 10, 10, 0.6);
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  border-radius: 12px;
-  padding: 20px 10px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 12px;
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  cursor: default;
-}
 
-.s-card img {
-  width: 35px;
-  height: 35px;
-  filter: grayscale(100%) opacity(0.7);
-  transition: all 0.4s ease;
-}
 
 .s-card span {
   font-size: 0.75rem;
