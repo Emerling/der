@@ -13,6 +13,8 @@ href="https://fonts.googleapis.com/css2?family=Michroma&family=Syncopate:wght@40
 rel="stylesheet"
 />
 <link rel="icon" type="image/svg+xml" href="Favicon.svg">
+
+<script src="https://www.google.com/recaptcha/api.js?render=6Lftk3AsAAAAAE_Y2YzvB_6yXHsYW6J8iFW4yb3K"></script>
 </head>
 <body>
 <header class="header">
@@ -459,38 +461,41 @@ Enviar Mensaje
   const form = document.getElementById("my-form");
   const btn = document.getElementById("submit-btn");
 
-  form.addEventListener("submit", async (e) => {
-    e.preventDefault(); // Evita que la página salte
-    btn.innerText = "Enviando...";
-    btn.disabled = true; // Evita múltiples clics
+  form.addEventListener("submit", function(e) {
+    e.preventDefault();
+    btn.innerText = "Verificando...";
+    btn.disabled = true;
 
-    const data = new FormData(form);
+    // Ejecutar reCAPTCHA v3
+    grecaptcha.ready(function() {
+      grecaptcha.execute('6Lftk3AsAAAAAE_Y2YzvB_6yXHsYW6J8iFW4yb3K', {action: 'submit'}).then(function(token) {
+        
+        // Añadimos el token a los datos del formulario
+        const formData = new FormData(form);
+        formData.append('g-recaptcha-response', token);
 
-    try {
-      const response = await fetch(form.action, {
-        method: 'POST',
-        body: data,
-        headers: {
-          'Accept': 'application/json'
-        }
+        // Ahora sí, enviamos a Formspree
+        fetch(form.action, {
+          method: 'POST',
+          body: formData,
+          headers: {
+            'Accept': 'application/json'
+          }
+        }).then(response => {
+          if (response.ok) {
+            window.location.href = "gracias.html";
+          } else {
+            alert("Error en el envío. Verifica la configuración de reCAPTCHA en Formspree.");
+            btn.innerText = "Enviar Mensaje";
+            btn.disabled = false;
+          }
+        }).catch(error => {
+          alert("Error de red.");
+          btn.innerText = "Enviar Mensaje";
+          btn.disabled = false;
+        });
       });
-
-      if (response.ok) {
-        // Si todo sale bien, vamos a tu página de gracias
-        window.location.href = "gracias.html";
-      } else {
-        // Si Formspree responde pero con un error
-        const result = await response.json();
-        alert("Error: " + (result.error || "No se pudo enviar el mensaje. Revisa tu ID de Formspree."));
-        btn.innerText = "Enviar Mensaje";
-        btn.disabled = false;
-      }
-    } catch (error) {
-      // Error de red o de conexión
-      alert("Error de conexión. Inténtalo de nuevo.");
-      btn.innerText = "Enviar Mensaje";
-      btn.disabled = false;
-    }
+    });
   });
 </script>
 </html>
