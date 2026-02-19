@@ -10,7 +10,10 @@
   padding: 0;
   box-sizing: border-box;
 }
-
+html {
+  scroll-behavior: smooth; /* Hace que el salto sea un deslizamiento suave */
+  scroll-padding-top: 80px; /* Evita que el header fijo tape el inicio de la sección */
+}
 html,
 body {
   width: 100%;
