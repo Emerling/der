@@ -217,3 +217,33 @@ body {
   #btn-menu:checked ~ .menu {
     left: 0;
   }
+  @media (max-width: 768px) {
+  /* 1. Apilamos los elementos verticalmente */
+  .about-container {
+    flex-direction: column;
+    gap: 40px; /* Reducimos el espacio para que quepa todo */
+    text-align: center;
+  }
+
+  /* 2. Ajustamos la caja de la imagen */
+  .about-image {
+    width: 80%; /* No dejamos que ocupe todo el ancho para que se vea el borde */
+    max-width: 300px;
+    margin: 0 auto; /* Centramos la imagen */
+  }
+
+  /* 3. Corregimos el marco azul para que no se salga de la pantalla */
+  .image-border {
+    top: 15px;
+    left: -15px; /* Lo hacemos un poco más sutil en móvil */
+  }
+
+  /* 4. Ajustamos los textos para que no se vean gigantes en el celular */
+  .main-title {
+    font-size: 2.2rem;
+  }
+
+  .experience-badge {
+    justify-content: center; /* Centramos la placa de experiencia */
+  }
+}
