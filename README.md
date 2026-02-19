@@ -1,4 +1,5 @@
 # 🚀 Personal Portfolio | Dark Tech Aesthetic
+Desarrollado con 💙 por @Emerling - 2026
 
 Este es mi portafolio y resumen  profesional, diseñado con una estética minimalista y tecnológica. El proyecto destaca por su alto contraste, tipografías modernas y una experiencia de usuario fluida enfocada en el desarrollo y diseño digital.
 
