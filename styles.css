@@ -861,7 +861,9 @@ para que los iconos blancos/negros resalten */
   text-transform: uppercase;
   letter-spacing: 2px;
 }
-
+.grecaptcha-badge { 
+    visibility: hidden; 
+}
 @media (max-width: 768px) {
   .footer-grid {
     grid-template-columns: 1fr;
