@@ -1,53 +1,67 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
+     <meta charset="UTF-8" />
 <meta
 name="viewport"
 content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
 />
-<title>David E. Rondón</title>
+<title>der | Quien soy</title>
 <link rel="stylesheet" href="styles2.css"/>
 <link
 href="https://fonts.googleapis.com/css2?family=Michroma&family=Syncopate:wght@400;700&display=swap"
 rel="stylesheet"
 />
 <link rel="icon" type="image/svg+xml" href="Favicon.svg">
+
 </head>
-  <body>
-    <section class="container who-am-i">
-  <div class="content-wrapper">
-    <div class="photo-frame">
-      <img src="tu-foto.jpg" alt="Tu Nombre">
-    </div>
-    <div class="text-content">
-      <h2 class="title">QUIEN <span class="highlight">SOY</span></h2>
-      <p>Soy un apasionado de la tecnología y el diseño, enfocado en crear experiencias digitales que rompan lo convencional. Mi enfoque combina la lógica técnica con una estética limpia.</p>
-    </div>
-  </div>
-</section>
+<body>
 
-<hr class="separator">
+    <header class="header">
+        <nav class="navbar">
+            <div class="logo-container">
+                <img src="img/logo-der.svg" alt="LOGO" class="logo-svg">
+            </div>
 
-<section class="container what-i-do">
-  <h2 class="title center">QUE <span class="highlight">HAGO</span></h2>
-  <div class="services-grid">
-    <div class="service-card">
-      <div class="icon">01</div>
-      <h3>Desarrollo Web</h3>
-      <p>Creación de sitios modernos, rápidos y adaptables a cualquier dispositivo.</p>
-    </div>
-    <div class="service-card">
-      <div class="icon">02</div>
-      <h3>Diseño UI/UX</h3>
-      <p>Interfaces pensadas para el usuario, priorizando la facilidad de uso y el impacto visual.</p>
-    </div>
-    <div class="service-card">
-      <div class="icon">03</div>
-      <h3>Consultoría</h3>
-      <p>Asesoramiento estratégico para digitalizar ideas y optimizar flujos de trabajo.</p>
-    </div>
-  </div>
-</section>
-  </body>
+            <input type="checkbox" id="btn-menu">
+            <label for="btn-menu" class="icon-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+
+            <ul class="menu">
+                <li><a href="index.html">INICIO</a></li>
+                <li><a href="quien-soy.html">QUIEN SOY</a></li>
+                <li><a href="que-hago.html">QUE HAGO</a></li>
+                <li><a href="contacto.html">CONTACTO</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="about-section">
+            <div class="about-container">
+                <div class="about-image">
+                    <div class="image-border"></div>
+                    <img src="img/David-3.jpg" alt="Perfil David">
+                </div>
+                
+                <div class="about-info">
+                    <span class="subtitle">EST. 2024</span>
+                    <h1 class="main-title">QUIEN <span class="accent-blue">SOY</span></h1>
+                    <p class="description">
+                        Soy un creativo digital enfocado en la intersección entre el código y la estética. 
+                        Mi objetivo es transformar ideas complejas en interfaces funcionales y visualmente impactantes.
+                    </p>
+                    <div class="experience-badge">
+                        <span class="number">05</span>
+                        <span class="label">AÑOS DE<br>EXPERIENCIA</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+</body>
 </html>
