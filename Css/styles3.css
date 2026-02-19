@@ -101,101 +101,55 @@ body {
 .menu a:hover::after {
   width: 100%;
 }
-/* --- SECCIÓN QUÉ HAGO --- */
-.services-section {
-    padding: 120px 5% 60px;
-    min-height: 100vh;
-    max-width: 1200px;
-    margin: 0 auto;
+
+
+.about-section {
+  padding: 100px 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
 }
 
-.services-header {
-    text-align: center;
-    margin-bottom: 80px;
+.about-container {
+  display: flex;
+  max-width: 1100px;
+  gap: 80px;
+  align-items: center;
 }
 
-/* --- GRID DE TARJETAS --- */
-.services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 40px;
-    padding: 20px;
+.about-image {
+  position: relative;
+  flex: 1;
 }
 
-/* --- ESTILO DE LA TARJETA (Inspirado en tu sección Quién Soy) --- */
-.service-card {
-    position: relative; /* Para que el borde azul se posicione respecto a la tarjeta */
-    transition: transform 0.3s ease;
+.about-image img {
+  width: 100%;
+  max-width: 400px;
+  filter: grayscale(100%);
+  display: block;
+  z-index: 2;
+  position: relative;
 }
 
-.card-content {
-    background-color: #0a0a0a; /* Un negro ligeramente distinto para dar profundidad */
-    border: 1px solid var(--gris);
-    padding: 40px 30px;
-    position: relative;
-    z-index: 2;
-    height: 100%;
+.image-border {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 1px solid var(--azul);
+  top: 20px;
+  left: -20px;
+  z-index: 1;
 }
 
-.card-border {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    border: 1px solid var(--azul);
-    top: 10px;
-    left: -10px;
-    z-index: 1;
-    transition: 0.3s ease;
+.about-info {
+  flex: 1.2;
 }
 
-/* --- EFECTOS HOVER --- */
-.service-card:hover {
-    transform: translateY(-5px);
-}
-
-.service-card:hover .card-border {
-    top: 0;
-    left: 0;
-    background-color: rgba(75, 136, 250, 0.05);
-}
-
-/* --- ICONOS Y TEXTO --- */
-.service-icon {
-    width: 50px;
-    height: 50px;
-    color: var(--azul);
-    margin-bottom: 25px;
-}
-
-.service-card h3 {
-    font-size: 1.2rem;
-    margin-bottom: 15px;
-    letter-spacing: 2px;
-}
-
-.service-card p {
-    color: var(--blanco);
-    opacity: 0.7;
-    line-height: 1.6;
-    font-size: 0.9rem;
-    font-family: sans-serif; /* Texto largo es mejor en sans-serif para lectura */
-}
-
-/* --- RESPONSIVE PARA QUÉ HAGO --- */
-@media (max-width: 768px) {
-    .services-grid {
-        grid-template-columns: 1fr; /* Una columna en móvil */
-        gap: 50px;
-    }
-    
-    .main-title {
-        font-size: 2.5rem;
-    }
-    
-    .service-card {
-        max-width: 320px;
-        margin: 0 auto;
-    }
+.subtitle {
+  color: var(--azul);
+  font-size: 0.8rem;
+  letter-spacing: 5px;
 }
 
 .main-title {
@@ -210,6 +164,30 @@ body {
   /* Efecto de contorno si prefieres que no sea sólido */
 }
 
+.description {
+  line-height: 1.8;
+  color: var(--blanco);
+  opacity: 0.8;
+  margin-bottom: 40px;
+}
+
+.experience-badge {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  border-top: 1px solid var(--gris);
+  padding-top: 30px;
+}
+
+.experience-badge .number {
+  font-size: 3rem;
+  color: var(--azul);
+}
+
+.experience-badge .label {
+  font-size: 0.7rem;
+  letter-spacing: 2px;
+}
 
 /* --- UNIFICADO RESPONSIVE --- */
 @media (max-width: 768px) {
@@ -239,10 +217,33 @@ body {
   #btn-menu:checked ~ .menu {
     left: 0;
   }
-  
   @media (max-width: 768px) {
+  /* 1. Apilamos los elementos verticalmente */
+  .about-container {
+    flex-direction: column;
+    gap: 40px; /* Reducimos el espacio para que quepa todo */
+    text-align: center;
+  }
+
+  /* 2. Ajustamos la caja de la imagen */
+  .about-image {
+    width: 80%; /* No dejamos que ocupe todo el ancho para que se vea el borde */
+    max-width: 300px;
+    margin: 0 auto; /* Centramos la imagen */
+  }
+
+  /* 3. Corregimos el marco azul para que no se salga de la pantalla */
+  .image-border {
+    top: 15px;
+    left: -15px; /* Lo hacemos un poco más sutil en móvil */
+  }
 
   /* 4. Ajustamos los textos para que no se vean gigantes en el celular */
   .main-title {
     font-size: 2.2rem;
   }
+
+  .experience-badge {
+    justify-content: center; /* Centramos la placa de experiencia */
+  }
+}
