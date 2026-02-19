@@ -198,6 +198,19 @@ body {
     }
 }
 
+.main-title {
+  font-size: 3.5rem;
+  margin: 20px 0;
+  line-height: 1;
+}
+
+.accent-blue {
+  color: var(--azul);
+  -webkit-text-stroke: 1px var(--azul);
+  /* Efecto de contorno si prefieres que no sea sólido */
+}
+
+
 /* --- UNIFICADO RESPONSIVE --- */
 @media (max-width: 768px) {
   .icon-menu {
@@ -225,4 +238,11 @@ body {
 
   #btn-menu:checked ~ .menu {
     left: 0;
+  }
+  
+  @media (max-width: 768px) {
+
+  /* 4. Ajustamos los textos para que no se vean gigantes en el celular */
+  .main-title {
+    font-size: 2.2rem;
   }
