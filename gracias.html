@@ -3,18 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Success | Redirecting</title>
+    <title>Success | System Redirect</title>
     <link href="https://fonts.googleapis.com/css2?family=Michroma&family=Syncopate:wght@400;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --negro: #000;
-            --azul: #4b88fa;
-            --blanco: #ffffff;
-            --gris-card: rgba(30, 30, 30, 0.6); /* Gris oscuro con transparencia */
+            --negro-puro: #0a0a0a;
+            --gris-oscuro: #1a1a1a;
+            --gris-borde: #333333;
+            --azul-acento: #4b88fa;
+            --blanco: #e0e0e0;
+            --texto-tenue: #888888;
         }
 
         body {
-            background: var(--negro);
+            background-color: var(--negro-puro);
             color: var(--blanco);
             font-family: 'Michroma', sans-serif;
             display: flex;
@@ -23,49 +25,77 @@
             justify-content: center;
             height: 100vh;
             margin: 0;
+            overflow: hidden;
             text-transform: uppercase;
         }
 
-        /* Logo centrado y pequeño */
+        /* Animación de entrada suave */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
         .logo-container {
-            width: 120px;
-            margin-bottom: 30px; /* Más espacio antes de la card */
-            filter: drop-shadow(0 0 8px var(--azul));
+            width: 90px;
+            margin-bottom: 30px;
+            animation: fadeIn 0.8s ease-out;
         }
 
-        /* La Caja/Card */
+        /* Card Estilo Dark Minimalista */
         .card {
-            background: var(--gris-card);
-            padding: 30px 50px;
-            border-radius: 10px;
-            border: 1px solid rgba(75, 136, 250, 0.2); /* Borde azul muy suave */
-            backdrop-filter: blur(10px); /* Efecto de cristal esmerilado */
+            background-color: var(--gris-oscuro);
+            padding: 40px 60px;
+            border-radius: 4px; /* Bordes más rectos para look técnico */
+            border: 1px solid var(--gris-borde);
             text-align: center;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            animation: fadeIn 1s ease-out both;
+            max-width: 450px;
+            width: 85%;
         }
 
-        /* Mensaje en una sola línea y pequeño */
         .status-msg {
             font-family: 'Syncopate', sans-serif;
-            font-size: 0.75rem;
-            letter-spacing: 3px;
-            color: var(--azul);
-            margin-bottom: 15px;
-            text-shadow: 0 0 10px rgba(75, 136, 250, 0.3);
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 5px;
+            color: var(--blanco);
+            margin-bottom: 20px;
         }
 
-        /* Contador discreto */
         .redirect-info {
-            font-size: 0.6rem;
-            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.65rem;
+            color: var(--texto-tenue);
+            letter-spacing: 2px;
+            margin-bottom: 30px;
+        }
+
+        /* Resalte del número en Azul */
+        #timer {
+            color: var(--azul-acento);
+            font-size: 1.1rem;
+            font-weight: bold;
+            margin: 0 5px;
+            
+        }
+
+        /* Botón de retorno sobrio */
+        .return-link {
+            display: inline-block;
+            font-size: 0.65rem;
+            color: var(--azul-acento);
+            text-decoration: none;
+            border: 1px solid var(--blanco);
+            padding: 12px 24px;
+            transition: all 0.3s ease;
             letter-spacing: 2px;
         }
 
-        #timer {
-            color: var(--blanco);
-            font-weight: bold;
+        .return-link:hover {
+            background: var(--azul-acento);
+            color: var(--negro-puro);
+          
         }
-
     </style>
 </head>
 <body>
@@ -73,16 +103,19 @@
     <img src="img/logo-der.svg" alt="Logo" class="logo-container">
 
     <div class="card">
-        <div class="status-msg">MENSAJE ENVIADO CON ÉXITO</div>
+        <div class="status-msg">MENSAJE ENVIADO</div>
 
         <div class="redirect-info">
-            REGRESANDO AL INICIO EN <span id="timer">10</span>S
+            RECONEXIÓN EN <span id="timer">10</span> SEGUNDOS
         </div>
+
+        <a href="index.html" class="return-link">VOLVER AL PANEL</a>
     </div>
 
     <script>
         let seconds = 10;
         const display = document.querySelector('#timer');
+        
         const countdown = setInterval(() => {
             seconds--;
             display.textContent = seconds;
