@@ -431,8 +431,8 @@ required
 Enviar Mensaje
 </button>
 </form> -->
-<form action="https://formspree.io/f/meelznew" method="POST">
-  <input type="hidden" name="_next" value="https://emerling.github.io/der/gracias.html">
+<form id="my-form" action="https://formspree.io/f/meelznew" method="POST">
+  
 
   <div class="input-group">
     <input type="text" name="nombre" placeholder="Nombre Completo" required />
@@ -443,7 +443,7 @@ Enviar Mensaje
   <div class="input-group">
     <textarea name="mensaje" placeholder="¿En qué puedo ayudarte?" rows="4" required></textarea>
   </div>
-  <button type="submit" class="btn">Enviar Mensaje</button>
+  <button type="submit" class="btn">Enviame Mensaje</button>
 </form>
 </div>
 </div>
@@ -454,4 +454,40 @@ Enviar Mensaje
 </div>
 </footer>
 </body>
+<script>
+  const form = document.getElementById("my-form");
+  
+  async function handleSubmit(event) {
+    event.preventDefault(); // Evita que la página se recargue o se vaya a Formspree
+    const status = document.getElementById("submit-btn");
+    const data = new FormData(event.target);
+    
+    status.innerHTML = "Enviando..."; // Feedback visual rápido
+    
+    fetch(event.target.action, {
+      method: form.method,
+      body: data,
+      headers: {
+        'Accept': 'application/json'
+      }
+    }).then(response => {
+      if (response.ok) {
+        // ¡ÉXITO! Aquí es donde hacemos la redirección manual
+        window.location.href = "gracias.html";
+      } else {
+        response.json().then(data => {
+          if (Object.hasOwn(data, 'errors')) {
+            alert(data["errors"].map(error => error["message"]).join(", "));
+          } else {
+            alert("Oops! Hubo un problema al enviar el formulario");
+          }
+        })
+      }
+    }).catch(error => {
+      alert("Oops! Hubo un problema de conexión");
+    });
+  }
+  
+  form.addEventListener("submit", handleSubmit);
+</script>
 </html>
