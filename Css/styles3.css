@@ -1,4 +1,4 @@
-root {
+:root {
   --azul: #4b88fa;
   --negro: #000000;
   --blanco: #F0EEE9;
@@ -101,8 +101,6 @@ body {
 .menu a:hover::after {
   width: 100%;
 }
-
-
 /* --- SECCIÓN QUÉ HAGO --- */
 .services-section {
     padding: 120px 5% 60px;
@@ -199,6 +197,7 @@ body {
         margin: 0 auto;
     }
 }
+
 /* --- UNIFICADO RESPONSIVE --- */
 @media (max-width: 768px) {
   .icon-menu {
