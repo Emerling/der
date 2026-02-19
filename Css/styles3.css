@@ -11,7 +11,8 @@
   box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
   width: 100%;
   overflow-x: hidden;
   background-color: var(--negro);
@@ -19,7 +20,7 @@ html, body {
   color: var(--blanco);
 }
 
-/* --- HEADER --- */
+/* --- HEADER (Copiado fielmente de styles2) --- */
 .header {
   width: 100%;
   height: 70px;
@@ -29,6 +30,7 @@ html, body {
   left: 0;
   z-index: 1000;
   border-bottom: 1px solid var(--azul);
+  box-shadow: 0 4px 15px rgba(75, 136, 250, 0.15);
 }
 
 .navbar {
@@ -41,13 +43,34 @@ html, body {
   padding: 0 20px;
 }
 
+.logo-container {
+  display: flex;
+  align-items: center;
+  height: 80px;
+}
+
 .logo-svg {
-  height: 40px;
+  margin-top: 10px;
+  height: 50%;
   width: auto;
 }
 
-/* --- MENU --- */
-#btn-menu { display: none; }
+#btn-menu {
+  display: none;
+}
+
+.icon-menu {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.icon-menu span {
+  width: 25px;
+  height: 3px;
+  background: var(--blanco);
+}
 
 .menu {
   display: flex;
@@ -59,12 +82,29 @@ html, body {
   color: var(--blanco);
   text-decoration: none;
   font-family: "Michroma", sans-serif;
-  font-size: 0.9rem;
+  position: relative;
+  padding-bottom: 5px;
+  font-size: 1.1rem;
 }
 
-/* --- SECCIÓN QUÉ HAGO --- */
+.menu a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--azul);
+  transition: width 0.3s ease;
+}
+
+.menu a:hover::after {
+  width: 100%;
+}
+
+/* --- SECCIÓN QUÉ HAGO (Propias de styles3) --- */
 .services-section {
-    padding: 140px 5% 60px; /* Más padding arriba para que el header fijo no tape el título */
+    padding: 140px 5% 60px;
     min-height: 100vh;
     max-width: 1200px;
     margin: 0 auto;
@@ -84,14 +124,15 @@ html, body {
 }
 
 .main-title {
-    font-size: 3rem;
+    font-size: 3.5rem;
+    margin-bottom: 20px;
 }
 
 .accent-blue {
     color: var(--azul);
 }
 
-/* --- GRID --- */
+/* --- GRID Y TARJETAS --- */
 .services-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -100,7 +141,8 @@ html, body {
 
 .service-card {
     position: relative;
-    transition: 0.3s;
+    transition: transform 0.3s ease;
+    cursor: default;
 }
 
 .card-content {
@@ -109,6 +151,7 @@ html, body {
     padding: 40px 30px;
     position: relative;
     z-index: 2;
+    transition: border-color 0.3s ease;
 }
 
 .card-border {
@@ -116,42 +159,62 @@ html, body {
     width: 100%;
     height: 100%;
     border: 1px solid var(--azul);
-    top: 10px;
-    left: -10px;
+    top: 12px;
+    left: -12px;
     z-index: 1;
-    transition: 0.3s;
+    transition: 0.3s ease;
 }
 
 .service-icon {
     width: 45px;
+    height: 45px;
     color: var(--azul);
-    margin-bottom: 20px;
+    margin-bottom: 25px;
 }
 
-/* --- RESPONSIVE --- */
+.service-card h3 {
+    font-family: "Syncopate", sans-serif;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    letter-spacing: 2px;
+}
+
+.service-card p {
+    font-family: "Michroma", sans-serif;
+    font-size: 0.8rem;
+    line-height: 1.6;
+    opacity: 0.8;
+}
+
+/* --- EFECTOS HOVER --- */
+.service-card:hover {
+    transform: translateY(-5px);
+}
+
+.service-card:hover .card-border {
+    top: 0;
+    left: 0;
+    background-color: rgba(75, 136, 250, 0.05);
+}
+
+.service-card:hover .card-content {
+    border-color: var(--azul);
+}
+
+/* --- RESPONSIVE UNIFICADO --- */
 @media (max-width: 768px) {
-    .icon-menu {
-        display: flex;
-        flex-direction: column;
-        gap: 5px;
-        cursor: pointer;
-    }
+  .icon-menu {
+    display: flex;
+  }
 
-    .icon-menu span {
-        width: 25px;
-        height: 2px;
-        background: var(--blanco);
-    }
-
-    .menu {
+  .menu {
     position: fixed;
     top: 70px;
     left: -100%;
     width: 100%;
     height: calc(100vh - 70px);
-    background: rgba(40, 40, 40, 0.45);
-    backdrop-filter: blur(10px) saturate(180%);
-    -webkit-backdrop-filter: blur(10px) saturate(180%);
+    background: rgba(20, 20, 20, 0.95); /* Un poco más sólido para legibilidad */
+    backdrop-filter: blur(10px);
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
@@ -159,19 +222,23 @@ html, body {
     gap: 30px;
     z-index: 999;
     padding-top: 50px;
-    /* Ajusta este valor según sea necesario */
   }
 
   #btn-menu:checked ~ .menu {
     left: 0;
   }
 
-    #btn-menu:checked ~ .menu { left: 0; }
+  .services-grid {
+    grid-template-columns: 1fr;
+    padding: 0 10px;
+  }
 
-    .main-title { font-size: 2.2rem; }
+  .main-title {
+    font-size: 2.2rem;
+  }
 
-    .services-grid {
-        grid-template-columns: 1fr;
-        padding: 0 20px;
-    }
+  .service-card {
+    max-width: 350px;
+    margin: 0 auto;
+  }
 }
