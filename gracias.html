@@ -3,18 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mensaje Enviado | Status: Success</title>
+    <title>Success | Redirecting</title>
     <link href="https://fonts.googleapis.com/css2?family=Michroma&family=Syncopate:wght@400;700&display=swap" rel="stylesheet">
     <style>
         :root {
             --negro: #000;
             --azul: #4b88fa;
             --blanco: #ffffff;
-            --cyber-pink: #ff00ff;
         }
 
         body {
-            background: radial-gradient(circle at center, #1a1a1a 0%, var(--negro) 100%);
+            background: var(--negro);
             color: var(--blanco);
             font-family: 'Michroma', sans-serif;
             display: flex;
@@ -23,89 +22,61 @@
             justify-content: center;
             height: 100vh;
             margin: 0;
-            overflow: hidden;
+            text-transform: uppercase;
         }
 
-        /* Estilo del Logo */
+        /* Logo centrado y pequeño */
         .logo-container {
-            width: 120px; /* Ajusta según el tamaño de tu logo */
-            margin-bottom: 40px;
-            filter: drop-shadow(0 0 10px var(--azul));
+            width: 120px;
+            margin-bottom: 20px;
+            filter: drop-shadow(0 0 8px var(--azul));
         }
 
-        h1 {
-          
+        /* Mensaje en una sola línea y pequeño */
+        .status-msg {
             font-family: 'Syncopate', sans-serif;
-            font-size: 30px;
+            font-size: 0.75rem; /* Más pequeño */
             letter-spacing: 3px;
             color: var(--azul);
-            text-shadow: 0 0 20px rgba(75, 136, 250, 0.5);
-            margin: 10px 0;
+            margin-bottom: 10px;
+            text-align: center;
         }
 
-        p {
-            color: #d3d3d4;
-            font-size: 1rem;
-            margin-bottom: 40px;
-        }
-
-        /* El Contador */
-        .countdown-box {
-            border: 1px solid rgba(75, 136, 250, 0.3);
-            padding: 20px;
-            border-radius: 10px;
-            background: rgba(255, 255, 255, 0.02);
-            backdrop-filter: blur(5px);
+        /* Contador discreto */
+        .redirect-info {
+            font-size: 0.6rem;
+            color: rgba(255, 255, 255, 0.5);
+            letter-spacing: 1px;
         }
 
         #timer {
-            color: var(--cyber-pink);
+            color: var(--blanco);
             font-weight: bold;
-            font-size: 1.2rem;
-            text-shadow: 0 0 10px var(--cyber-pink);
         }
 
-        .btn-manual {
-            margin-top: 20px;
-            color: var(--azul);
-            text-decoration: none;
-            font-size: 0.7rem;
-            text-transform: uppercase;
-            border-bottom: 1px solid transparent;
-            transition: 0.3s;
-        }
-
-        .btn-manual:hover {
-            border-bottom: 1px solid var(--azul);
-        }
     </style>
 </head>
 <body>
 
-    <img src="img/logo-der.svg" alt="Logo" class="logo-container">
-<h1>MENSAJE ENVIADO</h1>
-<p>Sincronización exitosa.</p>
+    <img src="tu-logo.svg" alt="Logo" class="logo-container">
 
-    <div class="countdown-box">
-        Redirigiendo al inicio en  <span id="timer">10</span>...
+    <div class="status-msg">MENSAJE ENVIADO CON ÉXITO</div>
+
+    <div class="redirect-info">
+        REGRESANDO AL INICIO EN <span id="timer">10</span>S
     </div>
-
-    <a href="index.html" class="btn-manual">¿No quieres esperar? Clic aquí</a>
 
     <script>
         let seconds = 10;
         const display = document.querySelector('#timer');
-
         const countdown = setInterval(() => {
             seconds--;
             display.textContent = seconds;
-
             if (seconds <= 0) {
                 clearInterval(countdown);
-                window.location.href = "index.html"; // Redirige al index
+                window.location.href = "index.html";
             }
         }, 1000);
     </script>
-
 </body>
 </html>
