@@ -98,6 +98,10 @@
         .back-link:hover {
             border-color: var(--accent);
         }
+        #timer {
+    font-variant-numeric: tabular-nums;
+    font-family: 'Inter', monospace;
+}
     </style>
 </head>
 <body>
@@ -121,7 +125,7 @@
     </div>
 
     <script>
-        let seconds = 15;
+        let seconds = 12;
         const display = document.querySelector('#timer');
         const countdown = setInterval(() => {
             seconds--;
