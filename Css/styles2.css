@@ -1,0 +1,249 @@
+:root {
+  --azul: #4b88fa;
+  --negro: #000000;
+  --blanco: #F0EEE9;
+  --gris: #444444;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  overflow-x: hidden;
+  background-color: var(--negro);
+  font-family: "Syncopate", sans-serif;
+  color: var(--blanco);
+}
+/* --- HEADER  --- */
+.header {
+  width: 100%;
+  height: 70px;
+  background-color: var(--negro);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  border-bottom: 1px solid var(--azul);
+  box-shadow: 0 4px 15px rgba(75, 136, 250, 0.15);
+}
+
+.navbar {
+  max-width: 1200px;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  height: 80px;
+}
+
+.logo-svg {
+  margin-top: 10px;
+  height: 50%;
+  width: auto;
+}
+
+#btn-menu {
+  display: none;
+}
+
+.icon-menu {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.icon-menu span {
+  width: 25px;
+  height: 3px;
+  background: var(--blanco);
+}
+
+.menu {
+  display: flex;
+  list-style: none;
+  gap: 25px;
+}
+
+.menu a {
+  color: var(--blanco);
+  text-decoration: none;
+  font-family: "Michroma", sans-serif;
+  position: relative;
+  padding-bottom: 5px;
+  font-size: 1.1rem;
+}
+
+.menu a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--azul);
+  transition: width 0.3s ease;
+}
+
+.menu a:hover::after {
+  width: 100%;
+}
+
+
+.about-section {
+  padding: 100px 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.about-container {
+  display: flex;
+  max-width: 1100px;
+  gap: 80px;
+  align-items: center;
+}
+
+.about-image {
+  position: relative;
+  flex: 1;
+}
+
+.about-image img {
+  width: 100%;
+  max-width: 400px;
+  filter: grayscale(100%);
+  display: block;
+  z-index: 2;
+  position: relative;
+}
+
+.image-border {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 1px solid var(--azul);
+  top: 20px;
+  left: -20px;
+  z-index: 1;
+}
+
+.about-info {
+  flex: 1.2;
+}
+
+.subtitle {
+  color: var(--azul);
+  font-size: 0.8rem;
+  letter-spacing: 5px;
+}
+
+.main-title {
+  font-size: 3.5rem;
+  margin: 20px 0;
+  line-height: 1;
+}
+
+.accent-blue {
+  color: var(--azul);
+  -webkit-text-stroke: 1px var(--azul);
+  /* Efecto de contorno si prefieres que no sea sólido */
+}
+
+.description {
+  line-height: 1.8;
+  color: var(--blanco);
+  opacity: 0.8;
+  margin-bottom: 40px;
+}
+
+.experience-badge {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  border-top: 1px solid var(--gris);
+  padding-top: 30px;
+}
+
+.experience-badge .number {
+  font-size: 3rem;
+  color: var(--azul);
+}
+
+.experience-badge .label {
+  font-size: 0.7rem;
+  letter-spacing: 2px;
+}
+
+/* --- UNIFICADO RESPONSIVE --- */
+@media (max-width: 768px) {
+  .icon-menu {
+    display: flex;
+  }
+
+  .menu {
+    position: fixed;
+    top: 70px;
+    left: -100%;
+    width: 100%;
+    height: calc(100vh - 70px);
+    background: rgba(40, 40, 40, 0.45);
+    backdrop-filter: blur(10px) saturate(180%);
+    -webkit-backdrop-filter: blur(10px) saturate(180%);
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    gap: 30px;
+    z-index: 999;
+    padding-top: 50px;
+    /* Ajusta este valor según sea necesario */
+  }
+
+  #btn-menu:checked ~ .menu {
+    left: 0;
+  }
+  @media (max-width: 768px) {
+  /* 1. Apilamos los elementos verticalmente */
+  .about-container {
+    flex-direction: column;
+    gap: 40px; /* Reducimos el espacio para que quepa todo */
+    text-align: center;
+  }
+
+  /* 2. Ajustamos la caja de la imagen */
+  .about-image {
+    width: 80%; /* No dejamos que ocupe todo el ancho para que se vea el borde */
+    max-width: 300px;
+    margin: 0 auto; /* Centramos la imagen */
+  }
+
+  /* 3. Corregimos el marco azul para que no se salga de la pantalla */
+  .image-border {
+    top: 15px;
+    left: -15px; /* Lo hacemos un poco más sutil en móvil */
+  }
+
+  /* 4. Ajustamos los textos para que no se vean gigantes en el celular */
+  .main-title {
+    font-size: 2.2rem;
+  }
+
+  .experience-badge {
+    justify-content: center; /* Centramos la placa de experiencia */
+  }
+}
