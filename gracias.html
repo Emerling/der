@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gracias - Mensaje Enviado</title>
+    <link href="https://fonts.googleapis.com/css2?family=Michroma&family=Syncopate:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --negro: #000;
+            --azul: #4b88fa;
+            --blanco: #ffffff;
+        }
+        body {
+            background: var(--negro);
+            color: var(--blanco);
+            font-family: 'Michroma', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+        }
+        h1 {
+            color: var(--azul);
+            text-shadow: 0 0 15px rgba(75, 136, 250, 0.6);
+            font-family: 'Syncopate', sans-serif;
+        }
+        p { color: #cbcbcb; margin-bottom: 30px; }
+        .btn-regresar {
+            padding: 12px 25px;
+            border: 1px solid var(--azul);
+            color: var(--azul);
+            text-decoration: none;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+        }
+        .btn-regresar:hover {
+            background: rgba(75, 136, 250, 0.1);
+            box-shadow: 0 0 15px var(--azul);
+        }
+    </style>
+</head>
+<body>
+    <h1>¡MENSAJE RECIBIDO!</h1>
+    <p>Gracias por contactarme. Te responderé lo antes posible.</p>
+    <a href="index.html" class="btn-regresar">Volver al Inicio</a>
+</body>
+</html>
