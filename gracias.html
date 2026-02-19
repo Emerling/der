@@ -3,119 +3,126 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Success | System Redirect</title>
-    <link href="https://fonts.googleapis.com/css2?family=Michroma&family=Syncopate:wght@400;700&display=swap" rel="stylesheet">
+    <title>Confirmación de Envío</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500&family=Syncopate:wght@700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --negro-puro: #0a0a0a;
-            --gris-oscuro: #1a1a1a;
-            --gris-borde: #333333;
-            --azul-acento: #4b88fa;
-            --blanco: #e0e0e0;
-            --texto-tenue: #888888;
+            --bg: #000000;
+            --card-bg: #0a0a0a;
+            --accent: #4b88fa;
+            --text-main: #F0EEE9;
+            --text-secondary: #888;
+            --border: #1a1a1a;
         }
 
         body {
-            background-color: var(--negro-puro);
-            color: var(--blanco);
-            font-family: 'Michroma', sans-serif;
+            background-color: var(--bg);
+            color: var(--text-main);
+            font-family: 'Inter', sans-serif; /* Fuente más limpia y moderna */
             display: flex;
-            flex-direction: column;
             align-items: center;
             justify-content: center;
             height: 100vh;
             margin: 0;
-            overflow: hidden;
-            text-transform: uppercase;
+            -webkit-font-smoothing: antialiased;
         }
 
-        /* Animación de entrada suave */
+        .container {
+            text-align: center;
+            max-width: 400px;
+            padding: 20px;
+            animation: fadeIn 1.2s ease-out;
+        }
+
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(10px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
-        .logo-container {
-            width: 90px;
-            margin-bottom: 30px;
-            animation: fadeIn 0.8s ease-out;
+        .logo-wrapper {
+            margin-bottom: 60px;
         }
 
-        /* Card Estilo Dark Minimalista */
-        .card {
-            background-color: var(--gris-oscuro);
-            padding: 40px 60px;
-            border-radius: 4px; /* Bordes más rectos para look técnico */
-            border: 1px solid var(--gris-borde);
-            text-align: center;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-            animation: fadeIn 1s ease-out both;
-            max-width: 450px;
-            width: 85%;
+        .logo-wrapper img {
+            width: 60px; /* Tamaño más discreto = más elegante */
+            opacity: 0.9;
         }
 
-        .status-msg {
+        h1 {
             font-family: 'Syncopate', sans-serif;
-            font-size: 0.8rem;
+            font-size: 0.75rem;
+            letter-spacing: 0.4em;
+            color: var(--text-main);
+            margin-bottom: 15px;
             font-weight: 700;
-            letter-spacing: 5px;
-            color: var(--blanco);
-            margin-bottom: 20px;
         }
 
-        .redirect-info {
-            font-size: 0.65rem;
-            color: var(--texto-tenue);
-            letter-spacing: 2px;
-            margin-bottom: 30px;
+        .line {
+            width: 30px;
+            height: 1px;
+            background: var(--accent);
+            margin: 20px auto;
         }
 
-        /* Resalte del número en Azul */
+        p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            font-weight: 300;
+            margin-bottom: 40px;
+        }
+
+        .counter {
+            font-size: 0.7rem;
+            letter-spacing: 0.2em;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+        }
+
         #timer {
-            color: var(--azul-acento);
-            font-size: 1.1rem;
-            font-weight: bold;
-            margin: 0 5px;
-            
+            color: var(--text-main);
+            font-weight: 500;
         }
 
-        /* Botón de retorno sobrio */
-        .return-link {
+        .back-link {
             display: inline-block;
-            font-size: 0.65rem;
-            color: var(--azul-acento);
+            margin-top: 50px;
+            font-size: 0.7rem;
+            color: var(--text-main);
             text-decoration: none;
-            border: 1px solid var(--blanco);
-            padding: 12px 24px;
-            transition: all 0.3s ease;
-            letter-spacing: 2px;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 5px;
+            transition: border-color 0.3s;
         }
 
-        .return-link:hover {
-            background: var(--azul-acento);
-            color: var(--negro-puro);
-          
+        .back-link:hover {
+            border-color: var(--accent);
         }
     </style>
 </head>
 <body>
 
-    <img src="img/logo-der.svg" alt="Logo" class="logo-container">
-
-    <div class="card">
-        <div class="status-msg">MENSAJE ENVIADO</div>
-
-        <div class="redirect-info">
-            RECONEXIÓN EN <span id="timer">10</span> SEGUNDOS
+    <div class="container">
+        <div class="logo-wrapper">
+            <img src="img/logo-der.svg" alt="Logo">
         </div>
 
-        <a href="index.html" class="return-link">VOLVER AL PANEL</a>
+        <h1>SOLICITUD RECIBIDA</h1>
+        
+        <div class="line"></div>
+
+        <p>Tu mensaje ha sido procesado correctamente. <br> Nos pondremos en contacto a la brevedad.</p>
+
+        <div class="counter">
+            Redirección en <span id="timer">15</span>s
+        </div>
+
+        <a href="index.html" class="back-link">Volver al inicio</a>
     </div>
 
     <script>
-        let seconds = 10;
+        let seconds = 15;
         const display = document.querySelector('#timer');
-        
         const countdown = setInterval(() => {
             seconds--;
             display.textContent = seconds;
