@@ -192,6 +192,76 @@ body {
   letter-spacing: 2px;
 }
 
+/* --- SECCIÓN TRAYECTORIA --- */
+.path-section {
+    padding: 80px 5%;
+    display: flex;
+    justify-content: center;
+    background-color: var(--negro);
+}
+
+.path-container {
+    display: flex;
+    max-width: 1100px;
+    gap: 80px;
+    align-items: center;
+    flex-direction: row; /* Texto izquierda, imagen derecha */
+}
+
+.path-text {
+    flex: 1.2;
+}
+
+.path-image-wrapper {
+    position: relative;
+    flex: 1;
+}
+
+.path-img {
+    width: 100%;
+    max-width: 400px;
+    display: block;
+    position: relative;
+    z-index: 2;
+    filter: grayscale(100%);
+    transition: 0.5s ease;
+    border: 1px solid var(--gris);
+}
+
+.path-img:hover {
+    filter: grayscale(0%);
+}
+
+.path-border {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 1px solid var(--azul);
+    /* Desplazamos hacia la derecha y abajo para variar el estilo anterior */
+    bottom: -20px;
+    right: -20px;
+    z-index: 1;
+}
+
+/* --- RESPONSIVE TRAYECTORIA --- */
+@media (max-width: 768px) {
+    .path-container {
+        flex-direction: column-reverse; /* En móvil, imagen arriba del texto */
+        gap: 50px;
+        text-align: center;
+    }
+
+    .path-image-wrapper {
+        width: 85%;
+        margin: 0 auto;
+    }
+
+    .path-border {
+        bottom: -15px;
+        right: -15px;
+    }
+}
+
 /* --- UNIFICADO RESPONSIVE --- */
 @media (max-width: 768px) {
   .icon-menu {
