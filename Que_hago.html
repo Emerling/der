@@ -147,5 +147,45 @@ Auditoría técnica y mejora de rendimiento para aplicaciones que necesitan esca
 </div>
 </section>
 </main>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const skillsSection = document.querySelector('.skills-grid');
+    const progressCircles = document.querySelectorAll('.progress');
+
+    // Mapeo de porcentajes deseados
+    const percentages = {
+        'english': 85,
+        'security': 90,
+        'linux': 80,
+        'team': 75
+    };
+
+    const animateCircles = () => {
+        progressCircles.forEach(circle => {
+            // Identificar qué habilidad es por su clase secundaria
+            const skillClass = circle.classList[1]; 
+            const percent = percentages[skillClass];
+            
+            if (percent) {
+                // Cálculo: longitud - (longitud * porcentaje / 100)
+                const offset = 377 - (377 * percent / 100);
+                circle.style.strokeDashoffset = offset;
+            }
+        });
+    };
+
+    // Intersection Observer para detectar el scroll
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                animateCircles();
+                observer.unobserve(entry.target); // Solo animar una vez
+            }
+        });
+    }, { threshold: 0.5 }); // Se activa cuando se ve el 50% de la sección
+
+    observer.observe(skillsSection);
+});
+</script>
 </body>
 </html>
