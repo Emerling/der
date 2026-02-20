@@ -237,7 +237,6 @@ body {
     width: 100%;
     height: 100%;
     border: 1px solid var(--azul);
-    /* Desplazamos hacia la derecha y abajo para variar el estilo anterior */
     bottom: -20px;
     right: -20px;
     z-index: 1;
