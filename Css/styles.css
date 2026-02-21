@@ -107,27 +107,50 @@ body {
 }
 
 /* --- SECCIONES --- */
-.container {
+/*.container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 60px 20px;
+}*/
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 30px 20px; /* Reducido de 60px a 30px */
 }
 
-.hero {
+/*.hero {
   background: var(--negro);
   min-height: 85vh;
   display: flex;
   align-items: center;
   padding-top: 20px;
+}*/
+.hero {
+  background: var(--negro);
+  min-height: 60vh; /* Bajamos de 85vh a 60vh para que ocupe menos espacio vertical */
+  display: flex;
+  align-items: flex-start; /* Cambiado de 'center' a 'flex-start' */
+  padding-top: 100px;      /* Espacio para que no choque con el header fijo */
 }
 
-.about {
+/*.about {
   background: linear-gradient(
   180deg,
   var(--negro) 0%,
   rgba(255, 255, 255, 0.1) 100%
   );
   min-height: 100vh;
+  display: flex;
+  align-items: center;
+}*/
+.about {
+  background: linear-gradient(
+    180deg,
+    var(--negro) 0%,
+    rgba(255, 255, 255, 0.1) 100%
+  );
+  min-height: auto;      /* Quitamos el 100vh para que solo ocupe lo que mide su contenido */
+  padding-top: 40px;     /* Ajusta este valor para subirlo o bajarlo a gusto */
   display: flex;
   align-items: center;
 }
