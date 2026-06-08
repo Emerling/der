@@ -79,7 +79,7 @@ body {
 .menu {
   display: flex;
   list-style: none;
-  gap: 25px;
+  gap: clamp(25px, 4vw, 80px);
 }
 
 .menu a {
@@ -88,7 +88,7 @@ body {
   font-family: "Michroma", sans-serif;
   position: relative;
   padding-bottom: 5px;
-  font-size: 1.1rem;
+  font-size: clamp(1rem, 1.2vw, 1.5rem);
 }
 
 .menu a::after {
