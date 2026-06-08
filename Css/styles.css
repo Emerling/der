@@ -940,7 +940,7 @@ para que los iconos blancos/negros resalten */
 /* ============================================
    PANTALLAS GRANDES: TV 32" y superiores
    ============================================ */
-@media (min-width: 1366px) {
+@media (min-width: 1200px) {
   .navbar {
     max-width: 1400px;        /* Más ancho para aprovechar la TV */
     padding: 0 60px;          /* Más margen lateral */
