@@ -937,3 +937,38 @@ para que los iconos blancos/negros resalten */
   color: var(--blanco);
   letter-spacing: 0.5px;
 }
+/* ============================================
+   PANTALLAS GRANDES: TV 32" y superiores
+   ============================================ */
+@media (min-width: 1366px) {
+  .navbar {
+    max-width: 1400px;        /* Más ancho para aprovechar la TV */
+    padding: 0 60px;          /* Más margen lateral */
+  }
+
+  .menu {
+    gap: 60px;                /* Links más separados */
+  }
+
+  .menu a {
+    font-size: 1.3rem;        /* Letra un poco más grande */
+  }
+}
+
+/* ============================================
+   PANTALLAS EXTRA GRANDES: 40"+ / 4K
+   ============================================ */
+@media (min-width: 1920px) {
+  .navbar {
+    max-width: 1600px;
+    padding: 0 80px;
+  }
+
+  .menu {
+    gap: 80px;
+  }
+
+  .menu a {
+    font-size: 1.5rem;
+  }
+  }
