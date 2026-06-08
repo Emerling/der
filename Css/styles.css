@@ -942,16 +942,32 @@ para que los iconos blancos/negros resalten */
    ============================================ */
 @media (min-width: 1024px) {
   .navbar {
-    max-width: 1400px;        /* Más ancho para aprovechar la TV */
-    padding: 0 60px;          /* Más margen lateral */
+    max-width: 1400px;
+    padding: 0 50px;
   }
 
   .menu {
-    gap: 60px;                /* Links más separados */
+    gap: 50px;
   }
 
   .menu a {
-    font-size: 1.3rem;        /* Letra un poco más grande */
+    font-size: 1.2rem;
+  }
+}
+
+/* Sobrescribe para pantallas aún más grandes */
+@media (min-width: 1366px) {
+  .navbar {
+    max-width: 1500px;
+    padding: 0 60px;
+  }
+
+  .menu {
+    gap: 65px;
+  }
+
+  .menu a {
+    font-size: 1.35rem;
   }
 }
 
@@ -971,4 +987,4 @@ para que los iconos blancos/negros resalten */
   .menu a {
     font-size: 1.5rem;
   }
-  }
+}
