@@ -22,10 +22,16 @@
       "purpose": "any"
     },
     {
+      "src": "/icons/der-512-maskable.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
       "src": "/favicon-32.png",
       "sizes": "32x32",
       "type": "image/png",
-      "purpose": "maskable any"
+      "purpose": "any"
     },
     {
       "src": "/favicon-16.png",
