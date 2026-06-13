@@ -6,12 +6,24 @@
 name="viewport"
 content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
 />
-  <link rel="manifest" href="/manifest.json">
-<link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
+<!-- FAVICONS (pestaña) -->
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
-<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+
+<!-- MANIFEST / PWA / THUMBNAILS -->
+<link rel="manifest" href="/manifest.json">
+<meta name="application-name" content="David Emerling Rondón">
 <meta name="theme-color" content="#000000">
+
+<!-- iOS / Apple touch icon (usa versión PNG del logo horizontal) -->
+<link rel="apple-touch-icon" sizes="180x180" href="/icons/der-192.png">
+
+<!-- JSON-LD mínimo para nombre del sitio -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","name":"David Emerling Rondón","url":"https://emerling.github.io/der/"}
+</script>
+
 <title>Quién soy | {der;}</title>
 <link rel="stylesheet" href="Css/styles2.css" />
 <link
