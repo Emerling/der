@@ -39,6 +39,51 @@ rel="stylesheet"
 <link rel="icon" type="image/svg+xml" href="Favicon.svg">
 
 <script src="https://www.google.com/recaptcha/api.js?render=6Lftk3AsAAAAAE_Y2YzvB_6yXHsYW6J8iFW4yb3K"></script>
+
+<style>
+/* Tooltip resumen de herramientas */
+.s-card { position: relative; }
+
+.s-card .tip {
+  position: absolute;
+  bottom: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%) translateY(5px);
+  background: var(--azul, #2563eb);
+  color: #fff;
+  font-size: 0.75rem;
+  line-height: 1.3;
+  text-align: center;
+  padding: 8px 12px;
+  border-radius: 8px;
+  width: max-content;
+  max-width: 200px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s;
+  pointer-events: none;
+  z-index: 100;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
+}
+
+.s-card .tip::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 6px solid transparent;
+  border-top-color: var(--azul, #2563eb);
+}
+
+.s-card:hover .tip {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+</style>
+
+<base target="_blank">
 </head>
 <body>
 <header class="header">
@@ -137,27 +182,27 @@ contigo!</strong
 <img
 src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
 /><span>HTML5</span>
-</div>
+<span class="tip">Lenguaje de marcado para estructurar páginas web.</span></div>
 <div class="s-card">
 <img
 src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"
 /><span>CSS3</span>
-</div>
+<span class="tip">Hojas de estilo para el diseño visual de sitios web.</span></div>
 <div class="s-card">
 <img
 src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
 /><span>JavaScript</span>
-</div>
+<span class="tip">Lenguaje para dar interactividad a la web.</span></div>
 <div class="s-card">
 <img
 src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
 /><span>React</span>
-</div>
+<span class="tip">Librería para construir interfaces de usuario dinámicas.</span></div>
 <div class="s-card">
 <img
 src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg"
 /><span>Bootstrap</span>
-</div>
+<span class="tip">Framework de estilos responsivos y modernos.</span></div>
 </div>
 </div>
 
@@ -170,27 +215,27 @@ src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-orig
 <img
 src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg"
 /><span>PHP</span>
-</div>
+<span class="tip">Lenguaje de programación para desarrollo web del lado del servidor.</span></div>
 <div class="s-card">
 <img
 src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
 /><span>Node.js</span>
-</div>
+<span class="tip">Entorno para ejecutar JavaScript en el servidor.</span></div>
 <div class="s-card">
 <img
 src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
 /><span>Python</span>
-</div>
+<span class="tip">Lenguaje versátil para desarrollo, datos y automatización.</span></div>
 <div class="s-card">
 <img
 src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg"
 /><span>MySQL</span>
-</div>
+<span class="tip">Sistema de gestión de bases de datos relacional.</span></div>
 <div class="s-card">
 <img
 src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg"
 /><span>PostgreSQL</span>
-</div>
+<span class="tip">Base de datos relacional avanzada y robusta.</span></div>
 </div>
 </div>
 
@@ -204,12 +249,12 @@ src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-or
 src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-plain.svg"
 alt="wordpress"
 /><span>WordPress</span>
-</div>
+<span class="tip">CMS para crear sitios web sin programar.</span></div>
 <div class="s-card">
 <img
 src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg"
 /><span>Linux</span>
-</div>
+<span class="tip">Sistema operativo libre, ideal para servidores.</span></div>
 <div class="s-card">
 <img
 src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/android/android-original.svg"
@@ -217,7 +262,7 @@ alt="Android"
 class="skill-icon"
 />
 <span>Android</span>
-</div>
+<span class="tip">Sistema operativo móvil de Google.</span></div>
 </div>
 </div>
 <div class="skill-group">
@@ -231,21 +276,21 @@ src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/gimp/gimp-original.svg"
 alt="GIMP"
 />
 <span>GIMP</span>
-</div>
+<span class="tip">Editor de imágenes gratuito y potente.</span></div>
 <div class="s-card">
 <img
 src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/inkscape/inkscape-original.svg"
 alt="Inkscape"
 />
 <span>Inkscape</span>
-</div>
+<span class="tip">Programa de diseño vectorial libre y profesional.</span></div>
 <div class="s-card">
 <img
 src="https://www.svgrepo.com/show/306500/openai.svg"
 alt="AI Tools"
 />
 <span>AI Tools</span>
-</div>
+<span class="tip">Herramientas de inteligencia artificial para productividad.</span></div>
 </div>
 </div>
 </div>
