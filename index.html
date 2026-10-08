@@ -81,8 +81,57 @@ rel="stylesheet"
   visibility: visible;
   transform: translateX(-50%) translateY(0);
 }
+
+/* Mini reproductor de video (tooltip) para botones DEMO */
+.proyecto-card { position: relative; }
+
+.demo-player {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.9);
+    width: min(260px, 90%);
+    background: #0a0a0a;
+    border: 1px solid var(--azul, #2563eb);
+    border-radius: 8px;
+    padding: 6px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s ease, transform 0.25s ease;
+    z-index: 200;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+}
+
+.demo-player.open {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.demo-player video {
+    width: 100%;
+    display: block;
+    border-radius: 4px;
+}
+
+.demo-close {
+    position: absolute;
+    top: -9px;
+    right: -9px;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: none;
+    background: var(--azul, #2563eb);
+    color: #fff;
+    font-size: 0.75rem;
+    cursor: pointer;
+    line-height: 1;
+    padding: 0;
+}
 </style>
 
+<base target="_blank">
 <base target="_blank">
 </head>
 <body>
@@ -304,14 +353,14 @@ alt="AI Tools"
 
     <!-- Único contenedor para todas las tarjetas -->
     <div class="proyectos-grid">
-      
+
       <!-- Proyecto 1 -->
       <div class="proyecto-card">
         <div class="proyecto-img">
           <img src="img/proyecto1.jpg" alt="Ecommerce App" />
           <div class="proyecto-overlay">
             <a href="#" class="btn-icon"><i class="github-icon"></i> GitHub</a>
-            <a href="#" class="btn-icon"><i class="demo-icon"></i> Demo</a>
+            <a href="#" class="btn-icon demo-btn" data-video="video/ecommerce.mp4" target="_self"><i class="demo-icon"></i> Demo</a>
           </div>
         </div>
         <div class="proyecto-info">
@@ -489,16 +538,16 @@ d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"
   <div class="input-group">
     <textarea name="mensaje" placeholder="¿En qué puedo ayudarte?" rows="4" required></textarea>
   </div>
-    
+
   <button type="submit" id="submit-btn" class="btn">Enviand Mensaje</button>
-  
+
   <p style="font-size: 0.6rem; color: var(--blanco); opacity: 0.8; margin-top: 20px;">
   Este sitio está protegido por reCAPTCHA y se aplican la 
   <a href="https://policies.google.com/privacy" target="_blank" style="color: white; text-decoration: underline;">Política de Privacidad</a> y los 
   <a href="https://policies.google.com/terms" target="_blank" style="color: white; text-decoration: underline;">Términos de Servicio</a> de Google.
 </p>
 
-  
+
 </form>
 </div>
 </div>
@@ -521,7 +570,7 @@ d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"
     // Ejecutar reCAPTCHA v3
     grecaptcha.ready(function() {
       grecaptcha.execute('6Lftk3AsAAAAAE_Y2YzvB_6yXHsYW6J8iFW4yb3K', {action: 'submit'}).then(function(token) {
-        
+
         // Añadimos el token a los datos del formulario
         const formData = new FormData(form);
         formData.append('g-recaptcha-response', token);
@@ -549,5 +598,56 @@ d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"
       });
     });
   });
+</script>
+<script>
+// Mini reproductor de video en tooltip para botones DEMO
+document.querySelectorAll('.demo-btn').forEach(btn => {
+  btn.addEventListener('click', e => {
+    e.preventDefault();
+
+    // Cerrar cualquier reproductor abierto
+    document.querySelectorAll('.demo-player').forEach(p => {
+      p.querySelector('video').pause();
+      p.remove();
+    });
+
+    // Crear el tooltip con el video
+    const player = document.createElement('div');
+    player.className = 'demo-player';
+    player.innerHTML =
+      '<video src="' + btn.dataset.video + '" controls autoplay muted playsinline></video>' +
+      '<button class="demo-close" aria-label="Cerrar">\u2715</button>';
+
+    btn.closest('.proyecto-card').appendChild(player);
+    requestAnimationFrame(() => player.classList.add('open'));
+
+    // Botón cerrar
+    player.querySelector('.demo-close').addEventListener('click', ev => {
+      ev.stopPropagation();
+      player.querySelector('video').pause();
+      player.remove();
+    });
+  });
+});
+
+// Cerrar al hacer click fuera del reproductor
+document.addEventListener('click', e => {
+  document.querySelectorAll('.demo-player').forEach(p => {
+    if (!p.contains(e.target) && !e.target.closest('.demo-btn')) {
+      p.querySelector('video').pause();
+      p.remove();
+    }
+  });
+});
+
+// Cerrar con la tecla Escape
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') {
+    document.querySelectorAll('.demo-player').forEach(p => {
+      p.querySelector('video').pause();
+      p.remove();
+    });
+  }
+});
 </script>
 </html>
